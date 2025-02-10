@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from .views import admin_login, admin_add
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -24,4 +25,6 @@ urlpatterns = [
     path("api/blessings/", include("blessings.urls")),
     path("api/worship/", include("worship.urls")),
     path("api/donations/", include("donations.urls")),
+    path("api/login", admin_login, name="login"),
+    path("api/add-admin", admin_add, name="add_admin"),
 ]

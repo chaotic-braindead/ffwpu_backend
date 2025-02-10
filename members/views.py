@@ -1,7 +1,6 @@
 from rest_framework import generics
 from .models import Member
 from .serializers import MemberSerializer
-from rest_framework.permissions import IsAdminUser
 from rest_framework import status
 from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
@@ -10,7 +9,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 class MemberList(generics.ListAPIView):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
-    permission_classes = []
     model = serializer_class.Meta.model
     filter_backends = [OrderingFilter, DjangoFilterBackend]
     ordering_fields = ["country", "age"]
@@ -20,7 +18,6 @@ class MemberList(generics.ListAPIView):
 class MemberCreate(generics.ListCreateAPIView):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
-    permission_classes = []
 
     def create(self, request, *args, **kwargs):
         print(request.data)
@@ -30,7 +27,6 @@ class MemberCreate(generics.ListCreateAPIView):
 class MemberRetrieveDeleteUpdate(generics.RetrieveUpdateDestroyAPIView):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
-    permission_classes = []
 
 
 # class MemberEdit(generics.)
