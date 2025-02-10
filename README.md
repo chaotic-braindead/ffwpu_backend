@@ -59,7 +59,7 @@ python manage.py runserver
 <br />
 <br />
 
-# FFWPU Backend Documentation
+# FFWPU Backend Endpoints Documentation
 
 ## LOGIN (api/login)
 
@@ -74,7 +74,7 @@ To login as admin, perform a POST request to api/login with the following in the
 {"username": "admin", "password", "admin"}
 ```
 
-### Response: This method returns a token that must be passed to the Authorization header of all succeeding requests. You can store this token in local storage for later use.
+### Response: This endpoint returns a token that must be passed to the Authorization header of all succeeding requests. You can store this token in local storage for later use.
 
 ### Your request headers should look something like:
 
@@ -83,6 +83,28 @@ To login as admin, perform a POST request to api/login with the following in the
 ```
 
 ## NOTE: THE REMAINING METHODS REQUIRE AN AUTHORIZATION TOKEN TO WORK
+
+## ADD ADMIN (api/add-admin)
+
+To add another admin account, perform a **POST** request to api/add-admin with the following in the body of the request:
+
+1. username
+2. email
+3. password
+
+**Example body:**
+
+```
+{
+    “username”: “admin1”,
+    “email”: admin@admin.com,
+    “password”: “password”
+}
+```
+
+### Response: This endpoint returns a message confirming that the user is created. Otherwise, an error along with a message is returned.
+
+---
 
 ## More API documentations:
 

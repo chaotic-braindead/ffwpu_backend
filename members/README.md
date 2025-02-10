@@ -33,7 +33,7 @@ To view all members, perform a **GET** request to api/members. You may also incl
 {link}/api/members/?ordering=-country&marital_status=1&gender=2
 ```
 
-### Response: This method returns a list of all members that match the applied filters, if any.
+### Response: This endpoint returns a list of all members that match the applied filters, if any.
 
 ## ADD A MEMBER (api/members/add)
 
@@ -57,7 +57,7 @@ To add a member, perform a **POST** request to api/members/add with the followin
 16. spiritual_parent (must exist in /api/members; optional)
 17. family_id (must exist in /api/members; optional)
 
-### Response: This method returns the newly-added member object.
+### Response: This endpoint returns the newly-added member object.
 
 ---
 
@@ -65,7 +65,7 @@ To add a member, perform a **POST** request to api/members/add with the followin
 
 To get a specific member by their member_id, perform a **GET** request to api/members/<member_id>
 
-### Response: This returns the details of the member with the specified member_id
+### Response: This endpoint returns the details of the member with the specified member_id
 
 ---
 
@@ -73,7 +73,7 @@ To get a specific member by their member_id, perform a **GET** request to api/me
 
 To edit a specific member, perform a **PUT** request to api/members/<member_id> with the same format in the body as that of adding a member
 
-### Response: This returns the updated member object, if update is successful.
+### Response: This endpoint returns the updated member object, if update is successful.
 
 ---
 
@@ -81,4 +81,4 @@ To edit a specific member, perform a **PUT** request to api/members/<member_id> 
 
 To delete a specific member, perform a **DELETE** request to api/member/<member_id>
 
-### Response: This returns the deleted member object, if deletion is successful.
+### Response: This endpoint returns the deleted member object, if deletion is successful.
