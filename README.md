@@ -48,7 +48,19 @@ DATABASES = {
 }
 ```
 
-### 4. Start the server:
+### 4. Run migrations
+
+```
+python manage.py migrate
+```
+
+### 5. Create a superuser account (this will be your admin account)
+
+```
+python manage.py createsuperuser
+```
+
+### 6. Start the server:
 
 ```
 python manage.py runserver
