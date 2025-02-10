@@ -1,7 +1,6 @@
 from rest_framework import generics
 from .models import Member
 from .serializers import MemberSerializer
-from rest_framework import status
 from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 
