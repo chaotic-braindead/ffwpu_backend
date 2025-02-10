@@ -33,7 +33,11 @@ pip install -r requirements.txt
 
 ---
 
-### 3. Enter database credentials in [ffwpu_backend/settings.py](./ffwpu_backend/settings.py)
+### 3. Run the [ffwpu.sql](./ffwpu.sql) file
+
+---
+
+### 4. Enter database credentials in [ffwpu_backend/settings.py](./ffwpu_backend/settings.py)
 
 ```
 DATABASES = {
@@ -48,13 +52,13 @@ DATABASES = {
 }
 ```
 
-### 4. Run migrations
+### 5. Run migrations
 
 ```
 python manage.py migrate
 ```
 
-### 5. Create a superuser account (this will be your admin account)
+### 6. Create a superuser account (this will be your admin account)
 
 ```
 python manage.py createsuperuser
