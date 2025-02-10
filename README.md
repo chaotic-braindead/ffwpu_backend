@@ -64,7 +64,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-### 6. Start the server:
+### 7. Start the server:
 
 ```
 python manage.py runserver
