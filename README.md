@@ -1,18 +1,16 @@
 # FFWPU Backend Server
 
-## Setup
+## Setup to run project locally:
 
-### Optional but recommended
+### Optional but recommended:
 
----
-
-Install venv, if not installed
+1. Install venv, if not installed
 
 ```
 pip install venv
 ```
 
-Initialize and activate Python virtual environment
+2. Initialize and activate Python virtual environment
 
 ```
 python -m venv [YOUR_VIRTUAL_ENVIRONMENT_NAME]
@@ -23,13 +21,34 @@ YOUR_VIRTUAL_ENVIRONMENT_NAME/Scripts/activate
 
 ---
 
-Install dependencies
+### 1. Install dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-## Start the server:
+---
+
+### 2. Create a database named `ffwpu` in MySQL
+
+---
+
+### 3. Enter database credentials in [ffwpu_backend/settings.py](./ffwpu_backend/settings.py)
+
+```
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "ffwpu",
+        "USER": "<your username here>",
+        "PASSWORD": "<your password here>",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
+}
+```
+
+### 4. Start the server:
 
 ```
 python manage.py runserver
