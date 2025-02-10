@@ -35,9 +35,9 @@ To view all members, perform a **GET** request to api/members. You may also incl
 
 ### Response: This endpoint returns a list of all members that match the applied filters, if any.
 
-## ADD A MEMBER (api/members/add)
+## ADD A MEMBER (api/members)
 
-To add a member, perform a **POST** request to api/members/add with the following in the body of the request:
+To add a member, perform a **POST** request to api/members with the following in the body of the request:
 
 1. photo (optional)
 2. title (1 = Mr., 2 = Ms., 3=Mrs.)

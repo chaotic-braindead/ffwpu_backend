@@ -10,7 +10,7 @@ class Currency(models.Model):
 
 
 class Country(models.Model):
-    subregion = models.CharField(name="subregion", max_length=64, blank=True)
+    subregion = models.CharField(name="subregion", max_length=64, blank=True, null=True)
     nation = models.CharField(name="nation", max_length=64, primary_key=True)
     currency = models.ForeignKey(to=Currency, on_delete=models.CASCADE)
 
@@ -44,10 +44,11 @@ class Member(models.Model):
     family_name = models.CharField(max_length=64)
     gender = models.IntegerField(choices=[(1, "Male"), (2, "Female")])
     date_of_birth = models.DateField()
-    # blessing_status =
+    generation = models.CharField(max_length=64)
+    blessing_status = models.CharField(max_length=64)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
-    # blessed_year =
+    blessed_year = models.DateField()
     marital_status = models.IntegerField(
         choices=[(1, "Single"), (2, "Married"), (3, "Separated"), (4, "Divorced")]
     )
@@ -71,7 +72,6 @@ class Member(models.Model):
     membership_category = models.IntegerField(
         choices=[(1, "Regular"), (2, "Associate"), (3, "Registered"), (4, "Inactive")]
     )
-    # full name
     # related_donation_reg
     # related_worship_reg
     # related_guest
