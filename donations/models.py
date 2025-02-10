@@ -1,9 +1,5 @@
 from django.db import models
-from members.models import Member, Church
-
-
-class Currency(models.Model):
-    name = models.CharField(max_length=3, primary_key=True)
+from members.models import Currency, Member, Church
 
 
 class Donation(models.Model):
@@ -11,4 +7,4 @@ class Donation(models.Model):
     date = models.DateField()
     church = models.ForeignKey(to=Church, on_delete=models.CASCADE)
     amount = models.DecimalField(decimal_places=2, max_digits=12)
-    currency = models
+    currency = models.ForeignKey(to=Currency, on_delete=models.CASCADE)
