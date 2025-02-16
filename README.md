@@ -86,15 +86,26 @@ To login as admin, perform a POST request to api/login with the following in the
 {"username": "admin", "password", "admin"}
 ```
 
-### Response: This endpoint returns a token that must be passed to the Authorization header of all succeeding requests. You can store this token in local storage for later use.
+### Response: This endpoint returns an access token and a refresh token.
+
+- The **access token** must be passed to the Authorization header of all succeeding requests. This token expires 60 minutes after it was requested.
+- The **refresh token** is used to generate a new access token when it expires. This token expires 1 day after it was requested. After this, the user will need to login again. You can store these tokens in local storage for later use.
+
+## To refresh your access token: (api/refresh-token)
+
+Perform a **POST** request to api/refresh-token with your refresh token in the body of the request:
+
+```
+{"refresh": "<your token here>"}
+```
+
+## NOTE: THE REMAINING METHODS REQUIRE AN AUTHORIZATION TOKEN TO WORK
 
 ### Your request headers should look something like:
 
 ```
-{"Authorization": "Token <Your token>"}
+{"Authorization": "Bearer <Your token>"}
 ```
-
-## NOTE: THE REMAINING METHODS REQUIRE AN AUTHORIZATION TOKEN TO WORK
 
 ## ADD ADMIN (api/add-admin)
 
