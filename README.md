@@ -52,10 +52,12 @@ DATABASES = {
 }
 ```
 
-### 5. Run migrations
+### 5. Run migrations (or import [ffwpu.sql](ffwpu.sql))
 
 ```
-python manage.py migrate
+python manage.py migrate   # run migrations
+# or
+mysql -u username -p ffwpu < ffwpu.sql
 ```
 
 ### 6. Create a superuser account (this will be your admin account)
