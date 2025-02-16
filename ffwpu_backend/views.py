@@ -46,7 +46,9 @@ def admin_add(request):
         )
     password = request.data.get("password")
 
-    user = User.objects.create_user(username=username, email=email, password=password)
+    user = User.objects.create_superuser(
+        username=username, email=email, password=password
+    )
     return Response(
         {"message": "Admin created successfully!"}, status=status.HTTP_201_CREATED
     )
