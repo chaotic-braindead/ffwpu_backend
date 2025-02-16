@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "worship",
     "donations",
     "rest_framework.authtoken",
+    "corsheaders",
 ]
 
 REST_FRAMEWORK = {
@@ -74,7 +75,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = "ffwpu_backend.urls"
 
