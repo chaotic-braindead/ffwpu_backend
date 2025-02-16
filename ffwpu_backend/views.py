@@ -7,8 +7,8 @@ from rest_framework.decorators import (
     permission_classes,
     authentication_classes,
 )
-from rest_framework.authentication import TokenAuthentication, SessionAuthentication
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 
 
 @api_view(["POST"])
@@ -30,7 +30,6 @@ def admin_login(request):
 
 
 @api_view(["POST"])
-@authentication_classes([SessionAuthentication, TokenAuthentication])
 def admin_add(request):
     username = request.data.get("username")
     email = request.data.get("email")
@@ -52,3 +51,9 @@ def admin_add(request):
     return Response(
         {"message": "Admin created successfully!"}, status=status.HTTP_201_CREATED
     )
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def check_auth(request):
+    return Response({"message": "authenticated", "user": request.user.username})

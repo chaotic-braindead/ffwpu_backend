@@ -107,6 +107,12 @@ Perform a **POST** request to api/refresh-token with your refresh token in the b
 {"Authorization": "Bearer <Your token>"}
 ```
 
+## Check if authenticated (api/check-auth)
+
+Perform a **GET** request to api/check-auth to check if user is authenticated
+
+### Response: A 401 error if unauthenticated and 200 if authenticated
+
 ## ADD ADMIN (api/add-admin)
 
 To add another admin account, perform a **POST** request to api/add-admin with the following in the body of the request:

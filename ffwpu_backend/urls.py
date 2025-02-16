@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from .views import admin_login, admin_add
+from .views import check_auth, admin_add
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -26,7 +26,8 @@ urlpatterns = [
     path("api/blessings/", include("blessings.urls")),
     path("api/worship/", include("worship.urls")),
     path("api/donations/", include("donations.urls")),
-    path("api/login", TokenObtainPairView.as_view(), name="login"),
-    path("api/refresh-token", TokenRefreshView.as_view(), name="login"),
-    path("api/add-admin", admin_add, name="add_admin"),
+    path("api/login/", TokenObtainPairView.as_view()),
+    path("api/refresh-token/", TokenRefreshView.as_view()),
+    path("api/add-admin/", admin_add),
+    path("api/check-auth/", check_auth),
 ]
