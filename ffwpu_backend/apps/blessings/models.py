@@ -1,5 +1,4 @@
 from django.db import models
-from members.models import Member
 
 
 class Blessing(models.Model):
@@ -9,4 +8,4 @@ class Blessing(models.Model):
 
 class BlessingList(models.Model):
     blessing = models.ForeignKey(to=Blessing, on_delete=models.CASCADE)
-    member = models.ForeignKey(to=Member, on_delete=models.CASCADE)
+    member = models.ForeignKey(to="members.Member", on_delete=models.CASCADE)
