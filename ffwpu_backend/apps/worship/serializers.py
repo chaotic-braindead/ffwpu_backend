@@ -1,9 +1,13 @@
 from rest_framework import serializers
 from .models import Worship
+from members.serializers import MemberSerializer
+from members.models import Member
 import string
 
 
 class WorshipSerializer(serializers.ModelSerializer):
+    attendees = serializers.SerializerMethodField()
+
     class Meta:
         model = Worship
         fields = "__all__"
@@ -18,3 +22,7 @@ class WorshipSerializer(serializers.ModelSerializer):
             ): value
             for key, value in data.items()
         }
+
+    def get_members(self, obj):
+        members = Member.objects.filter(memberworship__worship=obj)
+        return MemberSerializer(members, many=True).data

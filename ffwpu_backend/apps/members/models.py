@@ -79,6 +79,7 @@ class Member(models.Model):
     family = models.ForeignKey(
         to=Family, on_delete=models.CASCADE, blank=True, null=True
     )
+    worships = models.ManyToManyField("worship.Worship", through="MemberWorship")
 
     @property
     def full_name(self):
@@ -94,3 +95,15 @@ class Member(models.Model):
 
     def __str__(self):
         return f"{self.member_id} - {self.full_name} ({self.country})"
+
+
+class MemberWorship(models.Model):
+    member = models.ForeignKey(to=Member, on_delete=models.CASCADE)
+    worship = models.ForeignKey(to="worship.Worship", on_delete=models.CASCADE)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["member", "worship"], name="unique_member_worship"
+            )
+        ]
