@@ -10,6 +10,7 @@ class Currency(models.Model):
 
 
 class Country(models.Model):
+    region = models.CharField(name="region", max_length=64, blank=True, null=True)
     subregion = models.CharField(name="subregion", max_length=64, blank=True, null=True)
     nation = models.CharField(name="nation", max_length=64, primary_key=True)
     currency = models.ForeignKey(to=Currency, on_delete=models.CASCADE)

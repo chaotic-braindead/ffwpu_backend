@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Member
+import string
 
 
 class MemberSerializer(serializers.ModelSerializer):
@@ -8,20 +9,16 @@ class MemberSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Member
-        # fields = [
-        #     "country",
-        #     "photo",
-        #     "title",
-        #     "given_name",
-        #     "middle_name",
-        #     "family_name",
-        #     "full_name",
-        #     "gender",
-        #     "date_of_birth",
-        #     "age",
-        #     'email',
-        #     'phone',
-        #     'marital_status'
-        # ]
         fields = "__all__"
         read_only_fields = ["member_id", "full_name", "age"]
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        return {
+            (
+                string.capwords(key.replace("_", " "))
+                if "member_id" not in key
+                else "Member ID"
+            ): value
+            for key, value in data.items()
+        }

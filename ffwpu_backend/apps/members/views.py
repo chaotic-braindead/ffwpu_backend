@@ -10,6 +10,7 @@ class MemberListCreate(generics.ListCreateAPIView):
     serializer_class = MemberSerializer
     model = serializer_class.Meta.model
     filter_backends = [OrderingFilter, DjangoFilterBackend]
+    permission_classes = []
     ordering_fields = ["country", "age"]
     filterset_fields = ["gender", "marital_status", "membership_category"]
 
