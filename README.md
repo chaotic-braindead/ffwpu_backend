@@ -137,7 +137,7 @@ To add another admin account, perform a **POST** request to api/add-admin with t
 
 ## More API documentations:
 
-- [Members](./members/README.md)
+- [Members](./ffwpu_backend/apps/members/README.md)
 - Blessings (Documentation soon)
 - Donations (Documentation soon)
-- Worship (Documentation soon)
+- [Worship](./ffwpu_backend/apps/worship/README.md)

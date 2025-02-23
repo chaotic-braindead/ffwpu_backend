@@ -42,7 +42,7 @@ To add a member, perform a **POST** request to api/worship with the following in
 
 To get a specific member by their worship_id, perform a **GET** request to api/worship/<worship_id>
 
-### Response: This endpoint returns the details of the worship with the specified worship_id
+### Response: This endpoint returns the details of the worship, including the members who attended, with the specified worship_id
 
 ---
 

@@ -1,6 +1,6 @@
 from rest_framework import generics, views
 from .models import Worship
-from .serializers import WorshipSerializer, MemberWorshipSerializer
+from .serializers import WorshipSerializer
 from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from members.models import MemberWorship, Member
