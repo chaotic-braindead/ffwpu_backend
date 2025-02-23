@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import Worship
+from .models import Worship
 import string
 
 

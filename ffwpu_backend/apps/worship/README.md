@@ -13,7 +13,7 @@ To view all members, perform a **GET** request to api/worship. You may also incl
 {link}/api/members/?ordering=-date  (descending)
 ```
 
-#### 3. type (1 = Onsite, 2 = Online)
+#### 3. worship_type (1 = Onsite, 2 = Online)
 
 ---
 
