@@ -29,7 +29,7 @@ To view all members, perform a **GET** request to api/worship. You may also incl
 
 To add a member, perform a **POST** request to api/worship with the following in the body of the request:
 
-1. name (optional)
+1. name
 2. date
 3. church
 4. worship_type (1 = Onsite, 2 = Online)
