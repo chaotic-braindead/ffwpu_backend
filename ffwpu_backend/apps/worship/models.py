@@ -13,7 +13,7 @@ class Guest(models.Model):
     name = models.CharField(max_length=255)
     nation = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
-    invited_by = models.ForeignKey(to="members.Member", on_delete=models.SET_NULL)
+    invited_by = models.ForeignKey(to="members.Member", on_delete=models.CASCADE)
 
 
 class GuestWorship(models.Model):
