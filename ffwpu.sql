@@ -82,7 +82,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add currency',7,'add_currency'),(26,'Can change currency',7,'change_currency'),(27,'Can delete currency',7,'delete_currency'),(28,'Can view currency',7,'view_currency'),(29,'Can add country',8,'add_country'),(30,'Can change country',8,'change_country'),(31,'Can delete country',8,'delete_country'),(32,'Can view country',8,'view_country'),(33,'Can add church',9,'add_church'),(34,'Can change church',9,'change_church'),(35,'Can delete church',9,'delete_church'),(36,'Can view church',9,'view_church'),(37,'Can add family',10,'add_family'),(38,'Can change family',10,'change_family'),(39,'Can delete family',10,'delete_family'),(40,'Can view family',10,'view_family'),(41,'Can add member',11,'add_member'),(42,'Can change member',11,'change_member'),(43,'Can delete member',11,'delete_member'),(44,'Can view member',11,'view_member'),(45,'Can add blessing',12,'add_blessing'),(46,'Can change blessing',12,'change_blessing'),(47,'Can delete blessing',12,'delete_blessing'),(48,'Can view blessing',12,'view_blessing'),(49,'Can add blessing list',13,'add_blessinglist'),(50,'Can change blessing list',13,'change_blessinglist'),(51,'Can delete blessing list',13,'delete_blessinglist'),(52,'Can view blessing list',13,'view_blessinglist'),(53,'Can add donation',14,'add_donation'),(54,'Can change donation',14,'change_donation'),(55,'Can delete donation',14,'delete_donation'),(56,'Can view donation',14,'view_donation'),(57,'Can add Token',15,'add_token'),(58,'Can change Token',15,'change_token'),(59,'Can delete Token',15,'delete_token'),(60,'Can view Token',15,'view_token'),(61,'Can add Token',16,'add_tokenproxy'),(62,'Can change Token',16,'change_tokenproxy'),(63,'Can delete Token',16,'delete_tokenproxy'),(64,'Can view Token',16,'view_tokenproxy');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add country',7,'add_country'),(26,'Can change country',7,'change_country'),(27,'Can delete country',7,'delete_country'),(28,'Can view country',7,'view_country'),(29,'Can add currency',8,'add_currency'),(30,'Can change currency',8,'change_currency'),(31,'Can delete currency',8,'delete_currency'),(32,'Can view currency',8,'view_currency'),(33,'Can add church',9,'add_church'),(34,'Can change church',9,'change_church'),(35,'Can delete church',9,'delete_church'),(36,'Can view church',9,'view_church'),(37,'Can add family',10,'add_family'),(38,'Can change family',10,'change_family'),(39,'Can delete family',10,'delete_family'),(40,'Can view family',10,'view_family'),(41,'Can add member',11,'add_member'),(42,'Can change member',11,'change_member'),(43,'Can delete member',11,'delete_member'),(44,'Can view member',11,'view_member'),(45,'Can add blessing',12,'add_blessing'),(46,'Can change blessing',12,'change_blessing'),(47,'Can delete blessing',12,'delete_blessing'),(48,'Can view blessing',12,'view_blessing'),(49,'Can add blessing list',13,'add_blessinglist'),(50,'Can change blessing list',13,'change_blessinglist'),(51,'Can delete blessing list',13,'delete_blessinglist'),(52,'Can view blessing list',13,'view_blessinglist'),(53,'Can add donation',14,'add_donation'),(54,'Can change donation',14,'change_donation'),(55,'Can delete donation',14,'delete_donation'),(56,'Can view donation',14,'view_donation'),(57,'Can add Token',15,'add_token'),(58,'Can change Token',15,'change_token'),(59,'Can delete Token',15,'delete_token'),(60,'Can view Token',15,'view_token'),(61,'Can add Token',16,'add_tokenproxy'),(62,'Can change Token',16,'change_tokenproxy'),(63,'Can delete Token',16,'delete_tokenproxy'),(64,'Can view Token',16,'view_tokenproxy'),(65,'Can add worship',17,'add_worship'),(66,'Can change worship',17,'change_worship'),(67,'Can delete worship',17,'delete_worship'),(68,'Can view worship',17,'view_worship'),(69,'Can add member worship',18,'add_memberworship'),(70,'Can change member worship',18,'change_memberworship'),(71,'Can delete member worship',18,'delete_memberworship'),(72,'Can view member worship',18,'view_memberworship'),(73,'Can add guest worship',19,'add_guestworship'),(74,'Can change guest worship',19,'change_guestworship'),(75,'Can delete guest worship',19,'delete_guestworship'),(76,'Can view guest worship',19,'view_guestworship'),(77,'Can add guest',20,'add_guest'),(78,'Can change guest',20,'change_guest'),(79,'Can delete guest',20,'delete_guest'),(80,'Can view guest',20,'view_guest');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,7 +125,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$870000$bw3zbaum23n3ZH3KP18VHA$B60Yr7ixdwo2q1H+02EvuITGvtHrv/Tt3PKuj22f6rE=',NULL,1,'raffy','','','email@email.com',1,1,'2025-02-10 07:58:04.161222'),(2,'pbkdf2_sha256$870000$PzJEVjdW61oGLDFhNoijyA$gvIp0u0gfeZA1EfNxbWoVp4RVPJblt7qXTCjQKSA+ZA=',NULL,1,'admin','','','',1,1,'2025-02-10 08:10:52.821223');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$870000$vSNuQmzHe3I9oC3aAs9qAa$DJpAfcS1zZp7m6It6tL2FilpYqoMfHKDYQnArB2rA5w=',NULL,1,'admin','','','',1,1,'2025-02-16 12:31:32.589047'),(2,'pbkdf2_sha256$870000$KO61mnhG8QMt6deTzxIoBR$M7W8TPnM4Aj6rhAfxhBniG+2kAC0C9uk+NdBN21PbMQ=',NULL,1,'rapi','','','rapi@mail.com',1,1,'2025-03-01 11:27:53.592500');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,7 +208,6 @@ CREATE TABLE `authtoken_token` (
 
 LOCK TABLES `authtoken_token` WRITE;
 /*!40000 ALTER TABLE `authtoken_token` DISABLE KEYS */;
-INSERT INTO `authtoken_token` VALUES ('969f69d70b8ff2966b5388d26ee11529eaa16d84','2025-02-10 07:58:44.185703',1),('a6f3ef73280c4cab0d3a5b44803d5fd0a3c32da0','2025-02-10 08:11:29.553330',2);
 /*!40000 ALTER TABLE `authtoken_token` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -309,7 +308,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,7 +317,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(15,'authtoken','token'),(16,'authtoken','tokenproxy'),(12,'blessings','blessing'),(13,'blessings','blessinglist'),(5,'contenttypes','contenttype'),(14,'donations','donation'),(9,'members','church'),(8,'members','country'),(7,'members','currency'),(10,'members','family'),(11,'members','member'),(6,'sessions','session');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(15,'authtoken','token'),(16,'authtoken','tokenproxy'),(12,'blessings','blessing'),(13,'blessings','blessinglist'),(5,'contenttypes','contenttype'),(14,'donations','donation'),(9,'members','church'),(7,'members','country'),(8,'members','currency'),(10,'members','family'),(11,'members','member'),(18,'members','memberworship'),(6,'sessions','session'),(20,'worship','guest'),(19,'worship','guestworship'),(17,'worship','worship');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -335,7 +334,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -344,7 +343,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2025-02-10 06:53:47.341465'),(2,'auth','0001_initial','2025-02-10 06:53:47.623818'),(3,'admin','0001_initial','2025-02-10 06:53:47.691966'),(4,'admin','0002_logentry_remove_auto_add','2025-02-10 06:53:47.697077'),(5,'admin','0003_logentry_add_action_flag_choices','2025-02-10 06:53:47.704069'),(6,'contenttypes','0002_remove_content_type_name','2025-02-10 06:53:47.751603'),(7,'auth','0002_alter_permission_name_max_length','2025-02-10 06:53:47.777875'),(8,'auth','0003_alter_user_email_max_length','2025-02-10 06:53:47.796969'),(9,'auth','0004_alter_user_username_opts','2025-02-10 06:53:47.802977'),(10,'auth','0005_alter_user_last_login_null','2025-02-10 06:53:47.844075'),(11,'auth','0006_require_contenttypes_0002','2025-02-10 06:53:47.846077'),(12,'auth','0007_alter_validators_add_error_messages','2025-02-10 06:53:47.850216'),(13,'auth','0008_alter_user_username_max_length','2025-02-10 06:53:47.870370'),(14,'auth','0009_alter_user_last_name_max_length','2025-02-10 06:53:47.887499'),(15,'auth','0010_alter_group_name_max_length','2025-02-10 06:53:47.905656'),(16,'auth','0011_update_proxy_permissions','2025-02-10 06:53:47.913657'),(17,'auth','0012_alter_user_first_name_max_length','2025-02-10 06:53:47.930589'),(18,'sessions','0001_initial','2025-02-10 06:53:47.957325'),(19,'members','0001_initial','2025-02-10 06:54:12.137183'),(20,'donations','0001_initial','2025-02-10 06:54:26.629167'),(21,'blessings','0001_initial','2025-02-10 06:54:29.913833'),(22,'authtoken','0001_initial','2025-02-10 07:45:27.876037'),(23,'authtoken','0002_auto_20160226_1747','2025-02-10 07:45:27.898081'),(24,'authtoken','0003_tokenproxy','2025-02-10 07:45:27.901208'),(25,'authtoken','0004_alter_tokenproxy_options','2025-02-10 07:45:27.904554');
+INSERT INTO `django_migrations` VALUES (1,'members','0001_initial','2025-02-11 11:32:06.658838'),(2,'blessings','0001_initial','2025-02-11 11:32:10.414616'),(3,'donations','0001_initial','2025-02-11 11:32:20.880503'),(4,'contenttypes','0001_initial','2025-02-11 11:32:44.186799'),(5,'auth','0001_initial','2025-02-11 11:32:44.624242'),(6,'admin','0001_initial','2025-02-11 11:32:44.718057'),(7,'admin','0002_logentry_remove_auto_add','2025-02-11 11:32:44.733671'),(8,'admin','0003_logentry_add_action_flag_choices','2025-02-11 11:32:44.733671'),(9,'contenttypes','0002_remove_content_type_name','2025-02-11 11:32:44.811723'),(10,'auth','0002_alter_permission_name_max_length','2025-02-11 11:32:44.843052'),(11,'auth','0003_alter_user_email_max_length','2025-02-11 11:32:44.874333'),(12,'auth','0004_alter_user_username_opts','2025-02-11 11:32:44.889948'),(13,'auth','0005_alter_user_last_login_null','2025-02-11 11:32:45.155552'),(14,'auth','0006_require_contenttypes_0002','2025-02-11 11:32:45.171176'),(15,'auth','0007_alter_validators_add_error_messages','2025-02-11 11:32:45.171176'),(16,'auth','0008_alter_user_username_max_length','2025-02-11 11:32:45.202350'),(17,'auth','0009_alter_user_last_name_max_length','2025-02-11 11:32:45.233599'),(18,'auth','0010_alter_group_name_max_length','2025-02-11 11:32:45.249258'),(19,'auth','0011_update_proxy_permissions','2025-02-11 11:32:45.264920'),(20,'auth','0012_alter_user_first_name_max_length','2025-02-11 11:32:45.296178'),(21,'authtoken','0001_initial','2025-02-11 11:32:45.343077'),(22,'authtoken','0002_auto_20160226_1747','2025-02-11 11:32:45.374290'),(23,'authtoken','0003_tokenproxy','2025-02-11 11:32:45.374290'),(24,'authtoken','0004_alter_tokenproxy_options','2025-02-11 11:32:45.389977'),(25,'sessions','0001_initial','2025-02-11 11:32:45.452409'),(26,'members','0002_country_region','2025-02-23 16:55:07.362383'),(27,'worship','0001_initial','2025-02-23 17:35:22.808740'),(28,'members','0003_memberworship_member_worships_and_more','2025-02-23 17:59:42.498446'),(29,'worship','0002_guest_guestworship','2025-03-01 07:27:36.419081');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -421,7 +420,7 @@ CREATE TABLE `members_church` (
   UNIQUE KEY `name` (`name`),
   KEY `members_church_country_id_8837802f_fk_members_country_nation` (`country_id`),
   CONSTRAINT `members_church_country_id_8837802f_fk_members_country_nation` FOREIGN KEY (`country_id`) REFERENCES `members_country` (`nation`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -430,6 +429,7 @@ CREATE TABLE `members_church` (
 
 LOCK TABLES `members_church` WRITE;
 /*!40000 ALTER TABLE `members_church` DISABLE KEYS */;
+INSERT INTO `members_church` VALUES (1,'Test','Philippines'),(2,'Test1','Philippines');
 /*!40000 ALTER TABLE `members_church` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -441,9 +441,10 @@ DROP TABLE IF EXISTS `members_country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `members_country` (
-  `subregion` varchar(64) NOT NULL,
+  `subregion` varchar(64) DEFAULT NULL,
   `nation` varchar(64) NOT NULL,
   `currency_id` varchar(3) NOT NULL,
+  `region` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`nation`),
   KEY `members_country_currency_id_ef962b1e_fk_members_currency_code` (`currency_id`),
   CONSTRAINT `members_country_currency_id_ef962b1e_fk_members_currency_code` FOREIGN KEY (`currency_id`) REFERENCES `members_currency` (`code`)
@@ -456,7 +457,7 @@ CREATE TABLE `members_country` (
 
 LOCK TABLES `members_country` WRITE;
 /*!40000 ALTER TABLE `members_country` DISABLE KEYS */;
-INSERT INTO `members_country` VALUES ('','Afghanistan','AFN'),('','Albania','ALL'),('','Algeria','DZD'),('','American Samoa','USD'),('','Andorra','EUR'),('','Angola','AOA'),('','Anguilla','XCD'),('','Antigua and Barbuda','XCD'),('','Argentina','ARS'),('','Armenia','AMD'),('','Aruba','AWG'),('','Australia','AUD'),('','Austria','EUR'),('','Azerbaijan','AZN'),('','Bahamas','BSD'),('','Bahrain','BHD'),('','Bangladesh','BDT'),('','Barbados','BBD'),('','Belarus','BYN'),('','Belgium','EUR'),('','Belize','BZD'),('','Benin','XOF'),('','Bermuda','BMD'),('','Bhutan','BTN'),('','Bolivia','BOB'),('','Bosnia and Herzegovina','BAM'),('','Botswana','BWP'),('','Bouvet Island','NOK'),('','Brazil','BRL'),('','British Indian Ocean Territory','USD'),('','Brunei Darussalam','BND'),('','Bulgaria','BGN'),('','Burkina Faso','XOF'),('','Burundi','BIF'),('','Cambodia','KHR'),('','Cameroon','XAF'),('','Canada','CAD'),('','Cape Verde','CVE'),('','Cayman Islands','KYD'),('','Central African Republic','XAF'),('','Chad','XAF'),('','Chile','CLP'),('','China','CNY'),('','Christmas Island','AUD'),('','Cocos (Keeling) Islands','AUD'),('','Colombia','COP'),('','Comoros','KMF'),('','Cook Islands','NZD'),('','Costa Rica','CRC'),('','Croatia (Hrvatska)','HRK'),('','Cuba','CUP'),('','Cyprus','EUR'),('','Czech Republic','CZK'),('','Democratic Republic of the Congo','CDF'),('','Denmark','DKK'),('','Djibouti','DJF'),('','Dominica','XCD'),('','Dominican Republic','DOP'),('','East Timor','USD'),('','Ecuador','USD'),('','Egypt','EGP'),('','El Salvador','USD'),('','Equatorial Guinea','XAF'),('','Eritrea','ERN'),('','Estonia','EUR'),('','Eswatini','SZL'),('','Ethiopia','ETB'),('','Falkland Islands (Malvinas)','FKP'),('','Faroe Islands','DKK'),('','Fiji','FJD'),('','Finland','EUR'),('','France','EUR'),('','French Guiana','EUR'),('','French Polynesia','XPF'),('','French Southern Territories','EUR'),('','Gabon','XAF'),('','Gambia','GMD'),('','Georgia','GEL'),('','Germany','EUR'),('','Ghana','GHS'),('','Gibraltar','GIP'),('','Greece','EUR'),('','Greenland','DKK'),('','Grenada','XCD'),('','Guadeloupe','EUR'),('','Guam','USD'),('','Guatemala','GTQ'),('','Guinea','GNF'),('','Guinea-Bissau','XOF'),('','Guyana','GYD'),('','Haiti','HTG'),('','Honduras','HNL'),('','Hong Kong','HKD'),('','Hungary','HUF'),('','Iceland','ISK'),('','India','INR'),('','Indonesia','IDR'),('','Iran (Islamic Republic of)','IRR'),('','Iraq','IQD'),('','Ireland','EUR'),('','Isle of Man','GBP'),('','Israel','ILS'),('','Italy','EUR'),('','Ivory Coast','XOF'),('','Jamaica','JMD'),('','Japan','JPY'),('','Jersey','GBP'),('','Jordan','JOD'),('','Kazakhstan','KZT'),('','Kenya','KES'),('','Kiribati','AUD'),('','Korea, Democratic People\'s Republic of','KPW'),('','Korea, Republic of','KRW'),('','Kuwait','KWD'),('','Kyrgyzstan','KGS'),('','Lao People\'s Democratic Republic','LAK'),('','Latvia','EUR'),('','Lebanon','LBP'),('','Lesotho','LSL'),('','Liberia','LRD'),('','Libya','LYD'),('','Liechtenstein','CHF'),('','Lithuania','EUR'),('','Luxembourg','EUR'),('','Macau','MOP'),('','Madagascar','MGA'),('','Malawi','MWK'),('','Malaysia','MYR'),('','Maldives','MVR'),('','Mali','XOF'),('','Malta','EUR'),('','Marshall Islands','USD'),('','Martinique','EUR'),('','Mauritania','MRO'),('','Mauritius','MUR'),('','Mayotte','EUR'),('','Mexico','MXN'),('','Micronesia, Federated States of','USD'),('','Moldova, Republic of','MDL'),('','Mongolia','MNT'),('','Montenegro','EUR'),('','Montserrat','XCD'),('','Morocco','MAD'),('','Mozambique','MZN'),('','Myanmar','MMK'),('','Namibia','NAD'),('','Nauru','AUD'),('','Nepal','NPR'),('','Netherlands','EUR'),('','New Caledonia','XPF'),('','New Zealand','NZD'),('','Nicaragua','NIO'),('','Niger','XOF'),('','Nigeria','NGN'),('','Niue','NZD'),('','North Macedonia','MKD'),('','Northern Mariana Islands','USD'),('','Norway','NOK'),('','Oman','OMR'),('','Pakistan','PKR'),('','Palau','USD'),('','Panama','PAB'),('','Papua New Guinea','PGK'),('','Paraguay','PYG'),('','Peru','PEN'),('','Philippines','PHP'),('','Pitcairn','NZD'),('','Poland','PLN'),('','Portugal','EUR'),('','Puerto Rico','USD'),('','Qatar','QAR'),('','Republic of Congo','XAF'),('','Reunion','EUR'),('','Romania','RON'),('','Russian Federation','RUB'),('','Rwanda','RWF'),('','Saint Kitts and Nevis','XCD'),('','Saint Lucia','XCD'),('','Saint Vincent and the Grenadines','XCD'),('','Samoa','WST'),('','Sao Tome and Principe','STD'),('','Saudi Arabia','SAR'),('','Senegal','XOF'),('','Serbia','RSD'),('','Seychelles','SCR'),('','Sierra Leone','SLL'),('','Singapore','SGD'),('','Slovakia','EUR'),('','Slovenia','EUR'),('','Solomon Islands','SBD'),('','Somalia','SOS'),('','South Africa','ZAR'),('','South Sudan','SSP'),('','Spain','EUR'),('','Sri Lanka','LKR'),('','St. Helena','SHP'),('','St. Pierre and Miquelon','EUR'),('','Sudan','SDG'),('','Suriname','SRD'),('','Svalbard and Jan Mayen Islands','NOK'),('','Sweden','SEK'),('','Switzerland','CHF'),('','Syrian Arab Republic','SYP'),('','Taiwan','TWD'),('','Tajikistan','TJS'),('','Tanzania, United Republic of','TZS'),('','Thailand','THB'),('','Togo','XOF'),('','Tokelau','NZD'),('','Tonga','TOP'),('','Trinidad and Tobago','TTD'),('','Tunisia','TND'),('','Turkey','TRY'),('','Turkmenistan','TMT'),('','Turks and Caicos Islands','USD'),('','Tuvalu','AUD'),('','Uganda','UGX'),('','Ukraine','UAH'),('','United Arab Emirates','AED'),('','United Kingdom','GBP'),('','United States of America','USD'),('','Uruguay','UYU'),('','Uzbekistan','UZS'),('','Vanuatu','VUV'),('','Venezuela','VEF'),('','Vietnam','VND'),('','Virgin Islands (U.S.)','USD'),('','Wallis and Futuna Islands','XPF'),('','Western Sahara','MAD'),('','Yemen','YER'),('','Zambia','ZMW'),('','Zimbabwe','ZWL');
+INSERT INTO `members_country` VALUES ('','Afghanistan','AFN',NULL),('','Albania','ALL',NULL),('','Algeria','DZD',NULL),('','American Samoa','USD',NULL),('','Andorra','EUR',NULL),('','Angola','AOA',NULL),('','Anguilla','XCD',NULL),('','Antigua and Barbuda','XCD',NULL),('','Argentina','ARS',NULL),('','Armenia','AMD',NULL),('','Aruba','AWG',NULL),('','Australia','AUD',NULL),('','Austria','EUR',NULL),('','Azerbaijan','AZN',NULL),('','Bahamas','BSD',NULL),('','Bahrain','BHD',NULL),('','Bangladesh','BDT',NULL),('','Barbados','BBD',NULL),('','Belarus','BYN',NULL),('','Belgium','EUR',NULL),('','Belize','BZD',NULL),('','Benin','XOF',NULL),('','Bermuda','BMD',NULL),('','Bhutan','BTN',NULL),('','Bolivia','BOB',NULL),('','Bosnia and Herzegovina','BAM',NULL),('','Botswana','BWP',NULL),('','Bouvet Island','NOK',NULL),('','Brazil','BRL',NULL),('','British Indian Ocean Territory','USD',NULL),('','Brunei Darussalam','BND',NULL),('','Bulgaria','BGN',NULL),('','Burkina Faso','XOF',NULL),('','Burundi','BIF',NULL),('','Cambodia','KHR',NULL),('','Cameroon','XAF',NULL),('','Canada','CAD',NULL),('','Cape Verde','CVE',NULL),('','Cayman Islands','KYD',NULL),('','Central African Republic','XAF',NULL),('','Chad','XAF',NULL),('','Chile','CLP',NULL),('','China','CNY',NULL),('','Christmas Island','AUD',NULL),('','Cocos (Keeling) Islands','AUD',NULL),('','Colombia','COP',NULL),('','Comoros','KMF',NULL),('','Cook Islands','NZD',NULL),('','Costa Rica','CRC',NULL),('','Croatia (Hrvatska)','HRK',NULL),('','Cuba','CUP',NULL),('','Cyprus','EUR',NULL),('','Czech Republic','CZK',NULL),('','Democratic Republic of the Congo','CDF',NULL),('','Denmark','DKK',NULL),('','Djibouti','DJF',NULL),('','Dominica','XCD',NULL),('','Dominican Republic','DOP',NULL),('','East Timor','USD',NULL),('','Ecuador','USD',NULL),('','Egypt','EGP',NULL),('','El Salvador','USD',NULL),('','Equatorial Guinea','XAF',NULL),('','Eritrea','ERN',NULL),('','Estonia','EUR',NULL),('','Eswatini','SZL',NULL),('','Ethiopia','ETB',NULL),('','Falkland Islands (Malvinas)','FKP',NULL),('','Faroe Islands','DKK',NULL),('','Fiji','FJD',NULL),('','Finland','EUR',NULL),('','France','EUR',NULL),('','French Guiana','EUR',NULL),('','French Polynesia','XPF',NULL),('','French Southern Territories','EUR',NULL),('','Gabon','XAF',NULL),('','Gambia','GMD',NULL),('','Georgia','GEL',NULL),('','Germany','EUR',NULL),('','Ghana','GHS',NULL),('','Gibraltar','GIP',NULL),('','Greece','EUR',NULL),('','Greenland','DKK',NULL),('','Grenada','XCD',NULL),('','Guadeloupe','EUR',NULL),('','Guam','USD',NULL),('','Guatemala','GTQ',NULL),('','Guinea','GNF',NULL),('','Guinea-Bissau','XOF',NULL),('','Guyana','GYD',NULL),('','Haiti','HTG',NULL),('','Honduras','HNL',NULL),('','Hong Kong','HKD',NULL),('','Hungary','HUF',NULL),('','Iceland','ISK',NULL),('','India','INR',NULL),('','Indonesia','IDR',NULL),('','Iran (Islamic Republic of)','IRR',NULL),('','Iraq','IQD',NULL),('','Ireland','EUR',NULL),('','Isle of Man','GBP',NULL),('','Israel','ILS',NULL),('','Italy','EUR',NULL),('','Ivory Coast','XOF',NULL),('','Jamaica','JMD',NULL),('','Japan','JPY',NULL),('','Jersey','GBP',NULL),('','Jordan','JOD',NULL),('','Kazakhstan','KZT',NULL),('','Kenya','KES',NULL),('','Kiribati','AUD',NULL),('','Korea, Democratic People\'s Republic of','KPW',NULL),('','Korea, Republic of','KRW',NULL),('','Kuwait','KWD',NULL),('','Kyrgyzstan','KGS',NULL),('','Lao People\'s Democratic Republic','LAK',NULL),('','Latvia','EUR',NULL),('','Lebanon','LBP',NULL),('','Lesotho','LSL',NULL),('','Liberia','LRD',NULL),('','Libya','LYD',NULL),('','Liechtenstein','CHF',NULL),('','Lithuania','EUR',NULL),('','Luxembourg','EUR',NULL),('','Macau','MOP',NULL),('','Madagascar','MGA',NULL),('','Malawi','MWK',NULL),('','Malaysia','MYR',NULL),('','Maldives','MVR',NULL),('','Mali','XOF',NULL),('','Malta','EUR',NULL),('','Marshall Islands','USD',NULL),('','Martinique','EUR',NULL),('','Mauritania','MRO',NULL),('','Mauritius','MUR',NULL),('','Mayotte','EUR',NULL),('','Mexico','MXN',NULL),('','Micronesia, Federated States of','USD',NULL),('','Moldova, Republic of','MDL',NULL),('','Mongolia','MNT',NULL),('','Montenegro','EUR',NULL),('','Montserrat','XCD',NULL),('','Morocco','MAD',NULL),('','Mozambique','MZN',NULL),('','Myanmar','MMK',NULL),('','Namibia','NAD',NULL),('','Nauru','AUD',NULL),('','Nepal','NPR',NULL),('','Netherlands','EUR',NULL),('','New Caledonia','XPF',NULL),('','New Zealand','NZD',NULL),('','Nicaragua','NIO',NULL),('','Niger','XOF',NULL),('','Nigeria','NGN',NULL),('','Niue','NZD',NULL),('','North Macedonia','MKD',NULL),('','Northern Mariana Islands','USD',NULL),('','Norway','NOK',NULL),('','Oman','OMR',NULL),('','Pakistan','PKR',NULL),('','Palau','USD',NULL),('','Panama','PAB',NULL),('','Papua New Guinea','PGK',NULL),('','Paraguay','PYG',NULL),('','Peru','PEN',NULL),('','Philippines','PHP',NULL),('','Pitcairn','NZD',NULL),('','Poland','PLN',NULL),('','Portugal','EUR',NULL),('','Puerto Rico','USD',NULL),('','Qatar','QAR',NULL),('','Republic of Congo','XAF',NULL),('','Reunion','EUR',NULL),('','Romania','RON',NULL),('','Russian Federation','RUB',NULL),('','Rwanda','RWF',NULL),('','Saint Kitts and Nevis','XCD',NULL),('','Saint Lucia','XCD',NULL),('','Saint Vincent and the Grenadines','XCD',NULL),('','Samoa','WST',NULL),('','Sao Tome and Principe','STD',NULL),('','Saudi Arabia','SAR',NULL),('','Senegal','XOF',NULL),('','Serbia','RSD',NULL),('','Seychelles','SCR',NULL),('','Sierra Leone','SLL',NULL),('','Singapore','SGD',NULL),('','Slovakia','EUR',NULL),('','Slovenia','EUR',NULL),('','Solomon Islands','SBD',NULL),('','Somalia','SOS',NULL),('','South Africa','ZAR',NULL),('','South Sudan','SSP',NULL),('','Spain','EUR',NULL),('','Sri Lanka','LKR',NULL),('','St. Helena','SHP',NULL),('','St. Pierre and Miquelon','EUR',NULL),('','Sudan','SDG',NULL),('','Suriname','SRD',NULL),('','Svalbard and Jan Mayen Islands','NOK',NULL),('','Sweden','SEK',NULL),('','Switzerland','CHF',NULL),('','Syrian Arab Republic','SYP',NULL),('','Taiwan','TWD',NULL),('','Tajikistan','TJS',NULL),('','Tanzania, United Republic of','TZS',NULL),('','Thailand','THB',NULL),('','Togo','XOF',NULL),('','Tokelau','NZD',NULL),('','Tonga','TOP',NULL),('','Trinidad and Tobago','TTD',NULL),('','Tunisia','TND',NULL),('','Turkey','TRY',NULL),('','Turkmenistan','TMT',NULL),('','Turks and Caicos Islands','USD',NULL),('','Tuvalu','AUD',NULL),('','Uganda','UGX',NULL),('','Ukraine','UAH',NULL),('','United Arab Emirates','AED',NULL),('','United Kingdom','GBP',NULL),('','United States of America','USD',NULL),('','Uruguay','UYU',NULL),('','Uzbekistan','UZS',NULL),('','Vanuatu','VUV',NULL),('','Venezuela','VEF',NULL),('','Vietnam','VND',NULL),('','Virgin Islands (U.S.)','USD',NULL),('','Wallis and Futuna Islands','XPF',NULL),('','Western Sahara','MAD',NULL),('','Yemen','YER',NULL),('','Zambia','ZMW',NULL),('','Zimbabwe','ZWL',NULL);
 /*!40000 ALTER TABLE `members_country` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -497,7 +498,7 @@ CREATE TABLE `members_family` (
   PRIMARY KEY (`id`),
   KEY `members_family_church_id_cf229afd_fk_members_church_id` (`church_id`),
   CONSTRAINT `members_family_church_id_cf229afd_fk_members_church_id` FOREIGN KEY (`church_id`) REFERENCES `members_church` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -506,6 +507,7 @@ CREATE TABLE `members_family` (
 
 LOCK TABLES `members_family` WRITE;
 /*!40000 ALTER TABLE `members_family` DISABLE KEYS */;
+INSERT INTO `members_family` VALUES (1,'Test',1);
 /*!40000 ALTER TABLE `members_family` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -525,8 +527,11 @@ CREATE TABLE `members_member` (
   `family_name` varchar(64) NOT NULL,
   `gender` int(11) NOT NULL,
   `date_of_birth` date NOT NULL,
+  `generation` varchar(64) NOT NULL,
+  `blessing_status` varchar(64) NOT NULL,
   `email` varchar(254) NOT NULL,
   `phone` varchar(15) NOT NULL,
+  `blessed_year` date NOT NULL,
   `marital_status` int(11) NOT NULL,
   `spiritual_birthday` date NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -553,8 +558,120 @@ CREATE TABLE `members_member` (
 
 LOCK TABLES `members_member` WRITE;
 /*!40000 ALTER TABLE `members_member` DISABLE KEYS */;
-INSERT INTO `members_member` VALUES (1,'',1,'Rafael Sebastian','','Torres',1,'2003-09-08','email@email.com','09123456789',1,'2025-01-27','Pandacan, Manila',2,'Philippines',NULL,NULL,NULL);
+INSERT INTO `members_member` VALUES (1,'',1,'Test','Test','Test',1,'2016-10-11','1st Generation','IDK','email@mail.com','09123456789','2025-02-04',1,'2025-02-06','Address Street',1,'Philippines',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `members_member` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `members_memberworship`
+--
+
+DROP TABLE IF EXISTS `members_memberworship`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `members_memberworship` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL,
+  `worship_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_member_worship` (`member_id`,`worship_id`),
+  KEY `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` (`worship_id`),
+  CONSTRAINT `members_memberworshi_member_id_88eab76e_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`),
+  CONSTRAINT `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` FOREIGN KEY (`worship_id`) REFERENCES `worship_worship` (`worship_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `members_memberworship`
+--
+
+LOCK TABLES `members_memberworship` WRITE;
+/*!40000 ALTER TABLE `members_memberworship` DISABLE KEYS */;
+/*!40000 ALTER TABLE `members_memberworship` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `worship_guest`
+--
+
+DROP TABLE IF EXISTS `worship_guest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `worship_guest` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `nation` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `invited_by_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `worship_guest_invited_by_id_43e06818_fk_members_member_member_id` (`invited_by_id`),
+  CONSTRAINT `worship_guest_invited_by_id_43e06818_fk_members_member_member_id` FOREIGN KEY (`invited_by_id`) REFERENCES `members_member` (`member_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `worship_guest`
+--
+
+LOCK TABLES `worship_guest` WRITE;
+/*!40000 ALTER TABLE `worship_guest` DISABLE KEYS */;
+/*!40000 ALTER TABLE `worship_guest` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `worship_guestworship`
+--
+
+DROP TABLE IF EXISTS `worship_guestworship`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `worship_guestworship` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `guest_id_id` bigint(20) NOT NULL,
+  `worship_id_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `worship_guestworship_guest_id_id_4f466c58_fk_worship_guest_id` (`guest_id_id`),
+  KEY `worship_guestworship_worship_id_id_f474d97a_fk_worship_w` (`worship_id_id`),
+  CONSTRAINT `worship_guestworship_guest_id_id_4f466c58_fk_worship_guest_id` FOREIGN KEY (`guest_id_id`) REFERENCES `worship_guest` (`id`),
+  CONSTRAINT `worship_guestworship_worship_id_id_f474d97a_fk_worship_w` FOREIGN KEY (`worship_id_id`) REFERENCES `worship_worship` (`worship_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `worship_guestworship`
+--
+
+LOCK TABLES `worship_guestworship` WRITE;
+/*!40000 ALTER TABLE `worship_guestworship` DISABLE KEYS */;
+/*!40000 ALTER TABLE `worship_guestworship` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `worship_worship`
+--
+
+DROP TABLE IF EXISTS `worship_worship`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `worship_worship` (
+  `worship_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `worship_type` int(11) NOT NULL,
+  `church_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`worship_id`),
+  KEY `worship_worship_church_id_59ac3982_fk_members_church_id` (`church_id`),
+  CONSTRAINT `worship_worship_church_id_59ac3982_fk_members_church_id` FOREIGN KEY (`church_id`) REFERENCES `members_church` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `worship_worship`
+--
+
+LOCK TABLES `worship_worship` WRITE;
+/*!40000 ALTER TABLE `worship_worship` DISABLE KEYS */;
+/*!40000 ALTER TABLE `worship_worship` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -566,4 +683,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-10 17:36:20
+-- Dump completed on 2025-03-01 21:07:19
