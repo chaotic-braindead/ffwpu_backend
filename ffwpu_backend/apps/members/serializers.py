@@ -61,3 +61,16 @@ class CountrySerializer(serializers.ModelSerializer):
             (string.capwords(key.replace("_", " ")) if "id" not in key else "ID"): value
             for key, value in data.items()
         }
+
+
+class FamilySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Family
+        fields = "__all__"
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        return {
+            (string.capwords(key.replace("_", " "))): value
+            for key, value in data.items()
+        }

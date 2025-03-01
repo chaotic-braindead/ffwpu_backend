@@ -10,4 +10,6 @@ urlpatterns = [
     path("currency/<str:pk>", views.CurrencyRetrieveUpdateDelete.as_view()),
     path("country", views.CountryListCreate.as_view()),
     path("country/<str:pk>", views.CountryRetrieveUpdateDelete.as_view()),
+    path("family", views.FamilyListCreate.as_view()),
+    path("family/<int:pk>", views.FamilyRetrieveUpdateDelete.as_view()),
 ]

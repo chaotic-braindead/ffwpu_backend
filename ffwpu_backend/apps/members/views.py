@@ -58,3 +58,17 @@ class CountryRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CountrySerializer
     model = serializer_class.Meta.model
     permission_classes = []
+
+
+class FamilyListCreate(generics.ListCreateAPIView):
+    queryset = Family.objects.all()
+    serializer_class = FamilySerializer
+    permission_classes = []
+    model = serializer_class.Meta.model
+
+
+class FamilyRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Family.objects.all()
+    serializer_class = FamilySerializer
+    model = serializer_class.Meta.model
+    permission_classes = []
