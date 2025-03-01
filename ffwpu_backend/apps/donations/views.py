@@ -11,6 +11,8 @@ class DonationListCreate(generics.ListCreateAPIView):
     model = serializer_class.Meta.model
     filter_backends = [OrderingFilter, DjangoFilterBackend]
     permission_classes = []
+    ordering_fields = ["date", "amount"]
+    filterset_fields = ["member", "church"]
 
 
 class DonationRetrieveDeleteUpdate(generics.RetrieveUpdateDestroyAPIView):
