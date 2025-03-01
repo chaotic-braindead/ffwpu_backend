@@ -32,3 +32,10 @@ class MemberWorshipSerializer(serializers.ModelSerializer):
     class Meta:
         model = MemberWorship
         fields = ["member", "worship"]
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        return {
+            (string.capwords(key.replace("_", " "))): value
+            for key, value in data.items()
+        }
