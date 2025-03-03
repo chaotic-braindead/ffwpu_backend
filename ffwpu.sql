@@ -219,9 +219,10 @@ DROP TABLE IF EXISTS `blessings_blessing`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `blessings_blessing` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `blessing_date` date NOT NULL,
   `name_of_blessing` varchar(255) NOT NULL,
-  PRIMARY KEY (`name_of_blessing`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -243,12 +244,12 @@ DROP TABLE IF EXISTS `blessings_blessinglist`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `blessings_blessinglist` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `blessing_id` varchar(255) NOT NULL,
+  `blessing_id` bigint(20) NOT NULL,
   `member_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `blessings_blessingli_blessing_id_f0a9710f_fk_blessings` (`blessing_id`),
   KEY `blessings_blessingli_member_id_c142287f_fk_members_m` (`member_id`),
-  CONSTRAINT `blessings_blessingli_blessing_id_f0a9710f_fk_blessings` FOREIGN KEY (`blessing_id`) REFERENCES `blessings_blessing` (`name_of_blessing`),
+  CONSTRAINT `blessings_blessingli_blessing_id_f0a9710f_fk_blessings` FOREIGN KEY (`blessing_id`) REFERENCES `blessings_blessing` (`id`),
   CONSTRAINT `blessings_blessingli_member_id_c142287f_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
