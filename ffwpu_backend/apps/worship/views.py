@@ -22,11 +22,14 @@ class WorshipListCreate(generics.ListCreateAPIView):
 class WorshipRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Worship.objects.all()
     serializer_class = WorshipSerializer
+    permission_classes = []
 
 
 class WorshipAddAttendee(views.APIView):
-    def post(self, request, worship_id):
-        worship = get_object_or_404(Worship, pk=worship_id)
+    permission_classes = []
+
+    def post(self, request, pk):
+        worship = get_object_or_404(Worship, pk=pk)
         member_id = request.data.get("member_id")
 
         if not member_id:
@@ -52,8 +55,8 @@ class WorshipAddAttendee(views.APIView):
 
 
 class WorshipRemoveAttendee(views.APIView):
-    def post(self, request, worship_id):
-        worship = get_object_or_404(Worship, pk=worship_id)
+    def post(self, request, pk):
+        worship = get_object_or_404(Worship, pk=pk)
         member_id = request.data.get("member_id")
 
         if not member_id:
@@ -73,8 +76,8 @@ class WorshipRemoveAttendee(views.APIView):
 
 
 class WorshipAddGuest(views.APIView):
-    def post(self, request, worship_id):
-        worship = get_object_or_404(Worship, pk=worship_id)
+    def post(self, request, pk):
+        worship = get_object_or_404(Worship, pk=pk)
         name = request.data.get("name")
         nation = request.data.get("nation")
         email = request.data.get("email")
@@ -107,8 +110,8 @@ class WorshipAddGuest(views.APIView):
 
 
 class WorshipRemoveGuest(views.APIView):
-    def post(self, request, worship_id):
-        worship = get_object_or_404(Worship, pk=worship_id)
+    def post(self, request, pk):
+        worship = get_object_or_404(Worship, pk=pk)
         guest_id = request.data.get("guest_id")
 
         if not guest_id:

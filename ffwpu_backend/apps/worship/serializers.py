@@ -23,7 +23,7 @@ class WorshipSerializer(serializers.ModelSerializer):
             for key, value in data.items()
         }
 
-    def get_members(self, obj):
+    def get_attendees(self, obj):
         members = Member.objects.filter(memberworship__worship=obj)
         return MemberSerializer(members, many=True).data
 
