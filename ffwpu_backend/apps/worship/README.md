@@ -2,15 +2,15 @@
 
 ## LIST ALL WORSHIPS (api/worship/)
 
-To view all members, perform a **GET** request to api/worship/. You may also include the following in the URL query parameters for filtering:
+To view all worships, perform a **GET** request to api/worship/. You may also include the following in the URL query parameters for filtering:
 
 #### 1. ordering by date (ascending/descending)
 
 **Example:**
 
 ```
-{link}/api/members/?ordering=date  (ascending)
-{link}/api/members/?ordering=-date  (descending)
+{link}/api/worships/?ordering=date  (ascending)
+{link}/api/worships/?ordering=-date  (descending)
 ```
 
 #### 3. worship_type (1 = Onsite, 2 = Online)
@@ -20,7 +20,7 @@ To view all members, perform a **GET** request to api/worship/. You may also inc
 #### You may also chain filters, for example:
 
 ```
-{link}/api/members/?ordering=-date&type=1
+{link}/api/worships/?ordering=-date&type=1
 ```
 
 ### Response: This endpoint returns a list of all worships that match the applied filters, if any.
@@ -48,7 +48,7 @@ To get a specific member by their worship_id, perform a **GET** request to api/w
 
 ## EDIT A WORSHIP
 
-To edit a specific member, perform a **PUT** request to api/worship/<worship_id>/ with the same format in the body as that of adding a worship
+To edit a specific worship, perform a **PUT** request to api/worship/<worship_id>/ with the same format in the body as that of adding a worship
 
 ### Response: This endpoint returns the updated worship object, if update is successful.
 
@@ -69,6 +69,51 @@ Example request body:
 ```
 {
     "member_id": 1
+}
+```
+
+### Response: This endpoint returns the added member if member was added. Otherwise, an error is returned.
+
+## REMOVE A MEMBER FROM A WORSHIP (api/worship/<worship_id>/remove-attendee/)
+
+To add a member to a worship, perform a **POST** request to api/worship/<worship_id>/remove-attendee/ with the member_id of the member to be removed in the body:
+
+Example request body:
+
+```
+{
+    "member_id": 1
+}
+```
+
+### Response: This endpoint returns the added member if member was added. Otherwise, an error is returned.
+
+## ADD A GUEST TO A WORSHIP (api/worship/<worship_id>/add-guest/)
+
+To add a member to a worship, perform a **POST** request to api/worship/<worship_id>/add-guest/ with the following in the body:
+
+Example request body:
+
+```
+{
+    name: "name"
+    nation: "nation"
+    email: "email@email.com"
+    invited_by: 1      # member id
+}
+```
+
+### Response: This endpoint returns the added guest if guest was added. Otherwise, an error is returned.
+
+## REMOVE A GUEST FROM A WORSHIP (api/worship/<worship_id>/remove-guest/)
+
+To add a member to a worship, perform a **POST** request to api/worship/<worship_id>/remove-guest/ with the guest_id of the guest to be removed in the body:
+
+Example request body:
+
+```
+{
+    "guest_id": 1
 }
 ```
 

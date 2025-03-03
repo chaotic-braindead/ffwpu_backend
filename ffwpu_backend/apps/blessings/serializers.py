@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import *
 from members.serializers import MemberSerializer
-from members.models import Member
+import string
 
 
 class BlessingSerializer(serializers.ModelSerializer):
@@ -10,3 +10,10 @@ class BlessingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blessing
         fields = "__all__"
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        return {
+            (string.capwords(key.replace("_", " "))): value
+            for key, value in data.items()
+        }

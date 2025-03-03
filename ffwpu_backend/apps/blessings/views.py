@@ -2,6 +2,7 @@ from rest_framework import generics
 from .models import *
 from .serializers import *
 from rest_framework.response import Response
+from rest_framework.filters import OrderingFilter
 
 
 class BlessingListCreate(generics.ListCreateAPIView):
@@ -9,6 +10,8 @@ class BlessingListCreate(generics.ListCreateAPIView):
     permission_classes = []
     serializer_class = BlessingSerializer
     model = serializer_class.Meta.model
+    filter_backends = [OrderingFilter]
+    ordering_fields = ["blessing_date"]
 
 
 class BlessingRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
