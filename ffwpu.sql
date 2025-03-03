@@ -223,7 +223,7 @@ CREATE TABLE `blessings_blessing` (
   `blessing_date` date NOT NULL,
   `name_of_blessing` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -232,35 +232,37 @@ CREATE TABLE `blessings_blessing` (
 
 LOCK TABLES `blessings_blessing` WRITE;
 /*!40000 ALTER TABLE `blessings_blessing` DISABLE KEYS */;
+INSERT INTO `blessings_blessing` VALUES (1,'2025-03-03','test');
 /*!40000 ALTER TABLE `blessings_blessing` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `blessings_blessinglist`
+-- Table structure for table `blessings_blessing_members`
 --
 
-DROP TABLE IF EXISTS `blessings_blessinglist`;
+DROP TABLE IF EXISTS `blessings_blessing_members`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `blessings_blessinglist` (
+CREATE TABLE `blessings_blessing_members` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `blessing_id` bigint(20) NOT NULL,
   `member_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `blessings_blessingli_blessing_id_f0a9710f_fk_blessings` (`blessing_id`),
-  KEY `blessings_blessingli_member_id_c142287f_fk_members_m` (`member_id`),
-  CONSTRAINT `blessings_blessingli_blessing_id_f0a9710f_fk_blessings` FOREIGN KEY (`blessing_id`) REFERENCES `blessings_blessing` (`id`),
-  CONSTRAINT `blessings_blessingli_member_id_c142287f_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  UNIQUE KEY `blessings_blessing_members_blessing_id_member_id_19c4530e_uniq` (`blessing_id`,`member_id`),
+  KEY `blessings_blessing_m_member_id_23278890_fk_members_m` (`member_id`),
+  CONSTRAINT `blessings_blessing_m_blessing_id_6b2a1021_fk_blessings` FOREIGN KEY (`blessing_id`) REFERENCES `blessings_blessing` (`id`),
+  CONSTRAINT `blessings_blessing_m_member_id_23278890_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `blessings_blessinglist`
+-- Dumping data for table `blessings_blessing_members`
 --
 
-LOCK TABLES `blessings_blessinglist` WRITE;
-/*!40000 ALTER TABLE `blessings_blessinglist` DISABLE KEYS */;
-/*!40000 ALTER TABLE `blessings_blessinglist` ENABLE KEYS */;
+LOCK TABLES `blessings_blessing_members` WRITE;
+/*!40000 ALTER TABLE `blessings_blessing_members` DISABLE KEYS */;
+INSERT INTO `blessings_blessing_members` VALUES (1,1,1);
+/*!40000 ALTER TABLE `blessings_blessing_members` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -335,7 +337,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -344,7 +346,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'members','0001_initial','2025-02-11 11:32:06.658838'),(2,'blessings','0001_initial','2025-02-11 11:32:10.414616'),(3,'donations','0001_initial','2025-02-11 11:32:20.880503'),(4,'contenttypes','0001_initial','2025-02-11 11:32:44.186799'),(5,'auth','0001_initial','2025-02-11 11:32:44.624242'),(6,'admin','0001_initial','2025-02-11 11:32:44.718057'),(7,'admin','0002_logentry_remove_auto_add','2025-02-11 11:32:44.733671'),(8,'admin','0003_logentry_add_action_flag_choices','2025-02-11 11:32:44.733671'),(9,'contenttypes','0002_remove_content_type_name','2025-02-11 11:32:44.811723'),(10,'auth','0002_alter_permission_name_max_length','2025-02-11 11:32:44.843052'),(11,'auth','0003_alter_user_email_max_length','2025-02-11 11:32:44.874333'),(12,'auth','0004_alter_user_username_opts','2025-02-11 11:32:44.889948'),(13,'auth','0005_alter_user_last_login_null','2025-02-11 11:32:45.155552'),(14,'auth','0006_require_contenttypes_0002','2025-02-11 11:32:45.171176'),(15,'auth','0007_alter_validators_add_error_messages','2025-02-11 11:32:45.171176'),(16,'auth','0008_alter_user_username_max_length','2025-02-11 11:32:45.202350'),(17,'auth','0009_alter_user_last_name_max_length','2025-02-11 11:32:45.233599'),(18,'auth','0010_alter_group_name_max_length','2025-02-11 11:32:45.249258'),(19,'auth','0011_update_proxy_permissions','2025-02-11 11:32:45.264920'),(20,'auth','0012_alter_user_first_name_max_length','2025-02-11 11:32:45.296178'),(21,'authtoken','0001_initial','2025-02-11 11:32:45.343077'),(22,'authtoken','0002_auto_20160226_1747','2025-02-11 11:32:45.374290'),(23,'authtoken','0003_tokenproxy','2025-02-11 11:32:45.374290'),(24,'authtoken','0004_alter_tokenproxy_options','2025-02-11 11:32:45.389977'),(25,'sessions','0001_initial','2025-02-11 11:32:45.452409'),(26,'members','0002_country_region','2025-02-23 16:55:07.362383'),(27,'worship','0001_initial','2025-02-23 17:35:22.808740'),(28,'members','0003_memberworship_member_worships_and_more','2025-02-23 17:59:42.498446'),(29,'worship','0002_guest_guestworship','2025-03-01 07:27:36.419081');
+INSERT INTO `django_migrations` VALUES (1,'members','0001_initial','2025-02-11 11:32:06.658838'),(2,'blessings','0001_initial','2025-02-11 11:32:10.414616'),(3,'donations','0001_initial','2025-02-11 11:32:20.880503'),(4,'contenttypes','0001_initial','2025-02-11 11:32:44.186799'),(5,'auth','0001_initial','2025-02-11 11:32:44.624242'),(6,'admin','0001_initial','2025-02-11 11:32:44.718057'),(7,'admin','0002_logentry_remove_auto_add','2025-02-11 11:32:44.733671'),(8,'admin','0003_logentry_add_action_flag_choices','2025-02-11 11:32:44.733671'),(9,'contenttypes','0002_remove_content_type_name','2025-02-11 11:32:44.811723'),(10,'auth','0002_alter_permission_name_max_length','2025-02-11 11:32:44.843052'),(11,'auth','0003_alter_user_email_max_length','2025-02-11 11:32:44.874333'),(12,'auth','0004_alter_user_username_opts','2025-02-11 11:32:44.889948'),(13,'auth','0005_alter_user_last_login_null','2025-02-11 11:32:45.155552'),(14,'auth','0006_require_contenttypes_0002','2025-02-11 11:32:45.171176'),(15,'auth','0007_alter_validators_add_error_messages','2025-02-11 11:32:45.171176'),(16,'auth','0008_alter_user_username_max_length','2025-02-11 11:32:45.202350'),(17,'auth','0009_alter_user_last_name_max_length','2025-02-11 11:32:45.233599'),(18,'auth','0010_alter_group_name_max_length','2025-02-11 11:32:45.249258'),(19,'auth','0011_update_proxy_permissions','2025-02-11 11:32:45.264920'),(20,'auth','0012_alter_user_first_name_max_length','2025-02-11 11:32:45.296178'),(21,'authtoken','0001_initial','2025-02-11 11:32:45.343077'),(22,'authtoken','0002_auto_20160226_1747','2025-02-11 11:32:45.374290'),(23,'authtoken','0003_tokenproxy','2025-02-11 11:32:45.374290'),(24,'authtoken','0004_alter_tokenproxy_options','2025-02-11 11:32:45.389977'),(25,'sessions','0001_initial','2025-02-11 11:32:45.452409'),(26,'members','0002_country_region','2025-02-23 16:55:07.362383'),(27,'worship','0001_initial','2025-02-23 17:35:22.808740'),(28,'members','0003_memberworship_member_worships_and_more','2025-02-23 17:59:42.498446'),(29,'worship','0002_guest_guestworship','2025-03-01 07:27:36.419081'),(30,'blessings','0002_blessing_id_alter_blessing_name_of_blessing','2025-03-03 07:29:13.863796'),(31,'blessings','0003_blessing_members_delete_blessinglist','2025-03-03 07:48:44.308221');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -579,7 +581,7 @@ CREATE TABLE `members_memberworship` (
   KEY `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` (`worship_id`),
   CONSTRAINT `members_memberworshi_member_id_88eab76e_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`),
   CONSTRAINT `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` FOREIGN KEY (`worship_id`) REFERENCES `worship_worship` (`worship_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -588,6 +590,7 @@ CREATE TABLE `members_memberworship` (
 
 LOCK TABLES `members_memberworship` WRITE;
 /*!40000 ALTER TABLE `members_memberworship` DISABLE KEYS */;
+INSERT INTO `members_memberworship` VALUES (1,1,1);
 /*!40000 ALTER TABLE `members_memberworship` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -663,7 +666,7 @@ CREATE TABLE `worship_worship` (
   PRIMARY KEY (`worship_id`),
   KEY `worship_worship_church_id_59ac3982_fk_members_church_id` (`church_id`),
   CONSTRAINT `worship_worship_church_id_59ac3982_fk_members_church_id` FOREIGN KEY (`church_id`) REFERENCES `members_church` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -672,6 +675,7 @@ CREATE TABLE `worship_worship` (
 
 LOCK TABLES `worship_worship` WRITE;
 /*!40000 ALTER TABLE `worship_worship` DISABLE KEYS */;
+INSERT INTO `worship_worship` VALUES (1,'sample','2025-03-03',1,1);
 /*!40000 ALTER TABLE `worship_worship` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -684,4 +688,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-01 21:07:19
+-- Dump completed on 2025-03-03 16:05:44
