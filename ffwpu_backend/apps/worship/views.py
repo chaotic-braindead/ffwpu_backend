@@ -42,8 +42,7 @@ class WorshipAddAttendee(views.APIView):
         # Check if the member is already attending this worship
         if MemberWorship.objects.filter(member=member, worship=worship).exists():
             return Response(
-                {"error": "Member is already attending this worship"},
-                status=status.HTTP_400_BAD_REQUEST,
+                {"message": "Member is already attending this worship"},
             )
 
         # Add the member to the worship
@@ -68,11 +67,12 @@ class WorshipRemoveAttendee(views.APIView):
 
         # Check if the member is already attending this worship
         if MemberWorship.objects.filter(member=member, worship=worship).exists():
-            MemberWorship.objects.filter(id=member_id).delete()
-
-        return Response(
-            {"message": "Attendee deleted successfully"}, status=status.HTTP_201_CREATED
-        )
+            MemberWorship.objects.filter(member=member, worship=worship).delete()
+            return Response(
+                {"message": "Attendee deleted successfully"},
+                status=status.HTTP_201_CREATED,
+            )
+        return Response({"message": "No such attendee exists."})
 
 
 class WorshipAddGuest(views.APIView):
