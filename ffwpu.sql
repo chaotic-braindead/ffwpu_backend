@@ -116,7 +116,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +125,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$870000$vSNuQmzHe3I9oC3aAs9qAa$DJpAfcS1zZp7m6It6tL2FilpYqoMfHKDYQnArB2rA5w=',NULL,1,'admin','','','',1,1,'2025-02-16 12:31:32.589047'),(2,'pbkdf2_sha256$870000$KO61mnhG8QMt6deTzxIoBR$M7W8TPnM4Aj6rhAfxhBniG+2kAC0C9uk+NdBN21PbMQ=',NULL,1,'rapi','','','rapi@mail.com',1,1,'2025-03-01 11:27:53.592500');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$870000$vSNuQmzHe3I9oC3aAs9qAa$DJpAfcS1zZp7m6It6tL2FilpYqoMfHKDYQnArB2rA5w=',NULL,1,'admin','','','',1,1,'2025-02-16 12:31:32.589047'),(2,'pbkdf2_sha256$870000$KO61mnhG8QMt6deTzxIoBR$M7W8TPnM4Aj6rhAfxhBniG+2kAC0C9uk+NdBN21PbMQ=',NULL,1,'rapi','','','rapi@mail.com',1,1,'2025-03-01 11:27:53.592500'),(3,'pbkdf2_sha256$870000$h6gUAu6gCVmkuVf0njyOwo$arTjSMmiyUi/oH9jYloPGawwwUtGHMD1dY5pYDga1cc=',NULL,1,'test','','','test@email.com',1,1,'2025-03-08 05:47:34.022228');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,7 +223,7 @@ CREATE TABLE `blessings_blessing` (
   `blessing_date` date NOT NULL,
   `name_of_blessing` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -396,7 +396,7 @@ CREATE TABLE `donations_donation` (
   CONSTRAINT `donations_donation_church_id_9a67bd17_fk_members_church_id` FOREIGN KEY (`church_id`) REFERENCES `members_church` (`id`),
   CONSTRAINT `donations_donation_currency_id_65955642_fk_members_currency_code` FOREIGN KEY (`currency_id`) REFERENCES `members_currency` (`code`),
   CONSTRAINT `donations_donation_member_id_216189e2_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,6 +405,7 @@ CREATE TABLE `donations_donation` (
 
 LOCK TABLES `donations_donation` WRITE;
 /*!40000 ALTER TABLE `donations_donation` DISABLE KEYS */;
+INSERT INTO `donations_donation` VALUES (1,'2025-03-15',500.00,1,'PHP',1);
 /*!40000 ALTER TABLE `donations_donation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -460,7 +461,7 @@ CREATE TABLE `members_country` (
 
 LOCK TABLES `members_country` WRITE;
 /*!40000 ALTER TABLE `members_country` DISABLE KEYS */;
-INSERT INTO `members_country` VALUES ('','Afghanistan','AFN',NULL),('','Albania','ALL',NULL),('','Algeria','DZD',NULL),('','American Samoa','USD',NULL),('','Andorra','EUR',NULL),('','Angola','AOA',NULL),('','Anguilla','XCD',NULL),('','Antigua and Barbuda','XCD',NULL),('','Argentina','ARS',NULL),('','Armenia','AMD',NULL),('','Aruba','AWG',NULL),('','Australia','AUD',NULL),('','Austria','EUR',NULL),('','Azerbaijan','AZN',NULL),('','Bahamas','BSD',NULL),('','Bahrain','BHD',NULL),('','Bangladesh','BDT',NULL),('','Barbados','BBD',NULL),('','Belarus','BYN',NULL),('','Belgium','EUR',NULL),('','Belize','BZD',NULL),('','Benin','XOF',NULL),('','Bermuda','BMD',NULL),('','Bhutan','BTN',NULL),('','Bolivia','BOB',NULL),('','Bosnia and Herzegovina','BAM',NULL),('','Botswana','BWP',NULL),('','Bouvet Island','NOK',NULL),('','Brazil','BRL',NULL),('','British Indian Ocean Territory','USD',NULL),('','Brunei Darussalam','BND',NULL),('','Bulgaria','BGN',NULL),('','Burkina Faso','XOF',NULL),('','Burundi','BIF',NULL),('','Cambodia','KHR',NULL),('','Cameroon','XAF',NULL),('','Canada','CAD',NULL),('','Cape Verde','CVE',NULL),('','Cayman Islands','KYD',NULL),('','Central African Republic','XAF',NULL),('','Chad','XAF',NULL),('','Chile','CLP',NULL),('','China','CNY',NULL),('','Christmas Island','AUD',NULL),('','Cocos (Keeling) Islands','AUD',NULL),('','Colombia','COP',NULL),('','Comoros','KMF',NULL),('','Cook Islands','NZD',NULL),('','Costa Rica','CRC',NULL),('','Croatia (Hrvatska)','HRK',NULL),('','Cuba','CUP',NULL),('','Cyprus','EUR',NULL),('','Czech Republic','CZK',NULL),('','Democratic Republic of the Congo','CDF',NULL),('','Denmark','DKK',NULL),('','Djibouti','DJF',NULL),('','Dominica','XCD',NULL),('','Dominican Republic','DOP',NULL),('','East Timor','USD',NULL),('','Ecuador','USD',NULL),('','Egypt','EGP',NULL),('','El Salvador','USD',NULL),('','Equatorial Guinea','XAF',NULL),('','Eritrea','ERN',NULL),('','Estonia','EUR',NULL),('','Eswatini','SZL',NULL),('','Ethiopia','ETB',NULL),('','Falkland Islands (Malvinas)','FKP',NULL),('','Faroe Islands','DKK',NULL),('','Fiji','FJD',NULL),('','Finland','EUR',NULL),('','France','EUR',NULL),('','French Guiana','EUR',NULL),('','French Polynesia','XPF',NULL),('','French Southern Territories','EUR',NULL),('','Gabon','XAF',NULL),('','Gambia','GMD',NULL),('','Georgia','GEL',NULL),('','Germany','EUR',NULL),('','Ghana','GHS',NULL),('','Gibraltar','GIP',NULL),('','Greece','EUR',NULL),('','Greenland','DKK',NULL),('','Grenada','XCD',NULL),('','Guadeloupe','EUR',NULL),('','Guam','USD',NULL),('','Guatemala','GTQ',NULL),('','Guinea','GNF',NULL),('','Guinea-Bissau','XOF',NULL),('','Guyana','GYD',NULL),('','Haiti','HTG',NULL),('','Honduras','HNL',NULL),('','Hong Kong','HKD',NULL),('','Hungary','HUF',NULL),('','Iceland','ISK',NULL),('','India','INR',NULL),('','Indonesia','IDR',NULL),('','Iran (Islamic Republic of)','IRR',NULL),('','Iraq','IQD',NULL),('','Ireland','EUR',NULL),('','Isle of Man','GBP',NULL),('','Israel','ILS',NULL),('','Italy','EUR',NULL),('','Ivory Coast','XOF',NULL),('','Jamaica','JMD',NULL),('','Japan','JPY',NULL),('','Jersey','GBP',NULL),('','Jordan','JOD',NULL),('','Kazakhstan','KZT',NULL),('','Kenya','KES',NULL),('','Kiribati','AUD',NULL),('','Korea, Democratic People\'s Republic of','KPW',NULL),('','Korea, Republic of','KRW',NULL),('','Kuwait','KWD',NULL),('','Kyrgyzstan','KGS',NULL),('','Lao People\'s Democratic Republic','LAK',NULL),('','Latvia','EUR',NULL),('','Lebanon','LBP',NULL),('','Lesotho','LSL',NULL),('','Liberia','LRD',NULL),('','Libya','LYD',NULL),('','Liechtenstein','CHF',NULL),('','Lithuania','EUR',NULL),('','Luxembourg','EUR',NULL),('','Macau','MOP',NULL),('','Madagascar','MGA',NULL),('','Malawi','MWK',NULL),('','Malaysia','MYR',NULL),('','Maldives','MVR',NULL),('','Mali','XOF',NULL),('','Malta','EUR',NULL),('','Marshall Islands','USD',NULL),('','Martinique','EUR',NULL),('','Mauritania','MRO',NULL),('','Mauritius','MUR',NULL),('','Mayotte','EUR',NULL),('','Mexico','MXN',NULL),('','Micronesia, Federated States of','USD',NULL),('','Moldova, Republic of','MDL',NULL),('','Mongolia','MNT',NULL),('','Montenegro','EUR',NULL),('','Montserrat','XCD',NULL),('','Morocco','MAD',NULL),('','Mozambique','MZN',NULL),('','Myanmar','MMK',NULL),('','Namibia','NAD',NULL),('','Nauru','AUD',NULL),('','Nepal','NPR',NULL),('','Netherlands','EUR',NULL),('','New Caledonia','XPF',NULL),('','New Zealand','NZD',NULL),('','Nicaragua','NIO',NULL),('','Niger','XOF',NULL),('','Nigeria','NGN',NULL),('','Niue','NZD',NULL),('','North Macedonia','MKD',NULL),('','Northern Mariana Islands','USD',NULL),('','Norway','NOK',NULL),('','Oman','OMR',NULL),('','Pakistan','PKR',NULL),('','Palau','USD',NULL),('','Panama','PAB',NULL),('','Papua New Guinea','PGK',NULL),('','Paraguay','PYG',NULL),('','Peru','PEN',NULL),('','Philippines','PHP',NULL),('','Pitcairn','NZD',NULL),('','Poland','PLN',NULL),('','Portugal','EUR',NULL),('','Puerto Rico','USD',NULL),('','Qatar','QAR',NULL),('','Republic of Congo','XAF',NULL),('','Reunion','EUR',NULL),('','Romania','RON',NULL),('','Russian Federation','RUB',NULL),('','Rwanda','RWF',NULL),('','Saint Kitts and Nevis','XCD',NULL),('','Saint Lucia','XCD',NULL),('','Saint Vincent and the Grenadines','XCD',NULL),('','Samoa','WST',NULL),('','Sao Tome and Principe','STD',NULL),('','Saudi Arabia','SAR',NULL),('','Senegal','XOF',NULL),('','Serbia','RSD',NULL),('','Seychelles','SCR',NULL),('','Sierra Leone','SLL',NULL),('','Singapore','SGD',NULL),('','Slovakia','EUR',NULL),('','Slovenia','EUR',NULL),('','Solomon Islands','SBD',NULL),('','Somalia','SOS',NULL),('','South Africa','ZAR',NULL),('','South Sudan','SSP',NULL),('','Spain','EUR',NULL),('','Sri Lanka','LKR',NULL),('','St. Helena','SHP',NULL),('','St. Pierre and Miquelon','EUR',NULL),('','Sudan','SDG',NULL),('','Suriname','SRD',NULL),('','Svalbard and Jan Mayen Islands','NOK',NULL),('','Sweden','SEK',NULL),('','Switzerland','CHF',NULL),('','Syrian Arab Republic','SYP',NULL),('','Taiwan','TWD',NULL),('','Tajikistan','TJS',NULL),('','Tanzania, United Republic of','TZS',NULL),('','Thailand','THB',NULL),('','Togo','XOF',NULL),('','Tokelau','NZD',NULL),('','Tonga','TOP',NULL),('','Trinidad and Tobago','TTD',NULL),('','Tunisia','TND',NULL),('','Turkey','TRY',NULL),('','Turkmenistan','TMT',NULL),('','Turks and Caicos Islands','USD',NULL),('','Tuvalu','AUD',NULL),('','Uganda','UGX',NULL),('','Ukraine','UAH',NULL),('','United Arab Emirates','AED',NULL),('','United Kingdom','GBP',NULL),('','United States of America','USD',NULL),('','Uruguay','UYU',NULL),('','Uzbekistan','UZS',NULL),('','Vanuatu','VUV',NULL),('','Venezuela','VEF',NULL),('','Vietnam','VND',NULL),('','Virgin Islands (U.S.)','USD',NULL),('','Wallis and Futuna Islands','XPF',NULL),('','Western Sahara','MAD',NULL),('','Yemen','YER',NULL),('','Zambia','ZMW',NULL),('','Zimbabwe','ZWL',NULL);
+INSERT INTO `members_country` VALUES ('','Afghanistan','AFN',NULL),('','Albania','ALL',NULL),('','Algeria','DZD',NULL),('','American Samoa','USD',NULL),('','Andorra','EUR',NULL),('','Angola','AOA',NULL),('','Anguilla','XCD',NULL),('','Antigua and Barbuda','XCD',NULL),('','Argentina','ARS',NULL),('','Armenia','AMD',NULL),('','Aruba','AWG',NULL),('','Australia','AUD',NULL),('','Austria','EUR',NULL),('','Azerbaijan','AZN',NULL),('','Bahamas','BSD',NULL),('','Bahrain','BHD',NULL),('','Bangladesh','BDT',NULL),('','Barbados','BBD',NULL),('','Belarus','BYN',NULL),('','Belgium','EUR',NULL),('','Belize','BZD',NULL),('','Benin','XOF',NULL),('','Bermuda','BMD',NULL),('','Bhutan','BTN',NULL),('','Bolivia','BOB',NULL),('','Bosnia and Herzegovina','BAM',NULL),('','Botswana','BWP',NULL),('','Bouvet Island','NOK',NULL),('','Brazil','BRL',NULL),('','British Indian Ocean Territory','USD',NULL),('','Brunei Darussalam','BND',NULL),('','Bulgaria','BGN',NULL),('','Burkina Faso','XOF',NULL),('','Burundi','BIF',NULL),('','Cambodia','KHR',NULL),('','Cameroon','XAF',NULL),('','Canada','CAD',NULL),('','Cape Verde','CVE',NULL),('','Cayman Islands','KYD',NULL),('','Central African Republic','XAF',NULL),('','Chad','XAF',NULL),('','Chile','CLP',NULL),('','China','CNY',NULL),('','Christmas Island','AUD',NULL),('','Cocos (Keeling) Islands','AUD',NULL),('','Colombia','COP',NULL),('','Comoros','KMF',NULL),('','Cook Islands','NZD',NULL),('','Costa Rica','CRC',NULL),('','Croatia (Hrvatska)','HRK',NULL),('','Cuba','CUP',NULL),('','Cyprus','EUR',NULL),('','Czech Republic','CZK',NULL),('','Democratic Republic of the Congo','CDF',NULL),('','Denmark','DKK',NULL),('','Djibouti','DJF',NULL),('','Dominica','XCD',NULL),('','Dominican Republic','DOP',NULL),('','East Timor','USD',NULL),('','Ecuador','USD',NULL),('','Egypt','EGP',NULL),('','El Salvador','USD',NULL),('','Equatorial Guinea','XAF',NULL),('','Eritrea','ERN',NULL),('','Estonia','EUR',NULL),('','Eswatini','SZL',NULL),('','Ethiopia','ETB',NULL),('','Falkland Islands (Malvinas)','FKP',NULL),('','Faroe Islands','DKK',NULL),('','Fiji','FJD',NULL),('','Finland','EUR',NULL),('','France','EUR',NULL),('','French Guiana','EUR',NULL),('','French Polynesia','XPF',NULL),('','French Southern Territories','EUR',NULL),('','Gabon','XAF',NULL),('','Gambia','GMD',NULL),('','Georgia','GEL',NULL),('','Germany','EUR',NULL),('','Ghana','GHS',NULL),('','Gibraltar','GIP',NULL),('','Greece','EUR',NULL),('','Greenland','DKK',NULL),('','Grenada','XCD',NULL),('','Guadeloupe','EUR',NULL),('','Guam','USD',NULL),('','Guatemala','GTQ',NULL),('','Guinea','GNF',NULL),('','Guinea-Bissau','XOF',NULL),('','Guyana','GYD',NULL),('','Haiti','HTG',NULL),('','Honduras','HNL',NULL),('','Hong Kong','HKD',NULL),('','Hungary','HUF',NULL),('','Iceland','ISK',NULL),('','India','INR',NULL),('','Indonesia','IDR',NULL),('','Iran (Islamic Republic of)','IRR',NULL),('','Iraq','IQD',NULL),('','Ireland','EUR',NULL),('','Isle of Man','GBP',NULL),('','Israel','ILS',NULL),('','Italy','EUR',NULL),('','Ivory Coast','XOF',NULL),('','Jamaica','JMD',NULL),('','Japan','JPY',NULL),('','Jersey','GBP',NULL),('','Jordan','JOD',NULL),('','Kazakhstan','KZT',NULL),('','Kenya','KES',NULL),('','Kiribati','AUD',NULL),('','Korea, Democratic People\'s Republic of','KPW',NULL),('','Korea, Republic of','KRW',NULL),('','Kuwait','KWD',NULL),('','Kyrgyzstan','KGS',NULL),('','Lao People\'s Democratic Republic','LAK',NULL),('','Latvia','EUR',NULL),('','Lebanon','LBP',NULL),('','Lesotho','LSL',NULL),('','Liberia','LRD',NULL),('','Libya','LYD',NULL),('','Liechtenstein','CHF',NULL),('','Lithuania','EUR',NULL),('','Luxembourg','EUR',NULL),('','Macau','MOP',NULL),('','Madagascar','MGA',NULL),('','Malawi','MWK',NULL),('','Malaysia','MYR',NULL),('','Maldives','MVR',NULL),('','Mali','XOF',NULL),('','Malta','EUR',NULL),('','Marshall Islands','USD',NULL),('','Martinique','EUR',NULL),('','Mauritania','MRO',NULL),('','Mauritius','MUR',NULL),('','Mayotte','EUR',NULL),('','Mexico','MXN',NULL),('','Micronesia, Federated States of','USD',NULL),('','Moldova, Republic of','MDL',NULL),('','Mongolia','MNT',NULL),('','Montenegro','EUR',NULL),('','Montserrat','XCD',NULL),('','Morocco','MAD',NULL),('','Mozambique','MZN',NULL),('','Myanmar','MMK',NULL),('','Namibia','NAD',NULL),('','Nauru','AUD',NULL),('','Nepal','NPR',NULL),('','Netherlands','EUR',NULL),('','New Caledonia','XPF',NULL),('','New Zealand','NZD',NULL),('','Nicaragua','NIO',NULL),('','Niger','XOF',NULL),('','Nigeria','NGN',NULL),('','Niue','NZD',NULL),('','North Macedonia','MKD',NULL),('','Northern Mariana Islands','USD',NULL),('','Norway','NOK',NULL),('','Oman','OMR',NULL),('','Pakistan','PKR',NULL),('','Palau','USD',NULL),('','Panama','PAB',NULL),('','Papua New Guinea','PGK',NULL),('','Paraguay','PYG',NULL),('','Peru','PEN',NULL),('','Philippines','PHP','Asia Pacific'),('','Pitcairn','NZD',NULL),('','Poland','PLN',NULL),('','Portugal','EUR',NULL),('','Puerto Rico','USD',NULL),('','Qatar','QAR',NULL),('','Republic of Congo','XAF',NULL),('','Reunion','EUR',NULL),('','Romania','RON',NULL),('','Russian Federation','RUB',NULL),('','Rwanda','RWF',NULL),('','Saint Kitts and Nevis','XCD',NULL),('','Saint Lucia','XCD',NULL),('','Saint Vincent and the Grenadines','XCD',NULL),('','Samoa','WST',NULL),('','Sao Tome and Principe','STD',NULL),('','Saudi Arabia','SAR',NULL),('','Senegal','XOF',NULL),('','Serbia','RSD',NULL),('','Seychelles','SCR',NULL),('','Sierra Leone','SLL',NULL),('','Singapore','SGD',NULL),('','Slovakia','EUR',NULL),('','Slovenia','EUR',NULL),('','Solomon Islands','SBD',NULL),('','Somalia','SOS',NULL),('','South Africa','ZAR',NULL),('','South Sudan','SSP',NULL),('','Spain','EUR',NULL),('','Sri Lanka','LKR',NULL),('','St. Helena','SHP',NULL),('','St. Pierre and Miquelon','EUR',NULL),('','Sudan','SDG',NULL),('','Suriname','SRD',NULL),('','Svalbard and Jan Mayen Islands','NOK',NULL),('','Sweden','SEK',NULL),('','Switzerland','CHF',NULL),('','Syrian Arab Republic','SYP',NULL),('','Taiwan','TWD',NULL),('','Tajikistan','TJS',NULL),('','Tanzania, United Republic of','TZS',NULL),('','Thailand','THB',NULL),('','Togo','XOF',NULL),('','Tokelau','NZD',NULL),('','Tonga','TOP',NULL),('','Trinidad and Tobago','TTD',NULL),('','Tunisia','TND',NULL),('','Turkey','TRY',NULL),('','Turkmenistan','TMT',NULL),('','Turks and Caicos Islands','USD',NULL),('','Tuvalu','AUD',NULL),('','Uganda','UGX',NULL),('','Ukraine','UAH',NULL),('','United Arab Emirates','AED',NULL),('','United Kingdom','GBP',NULL),('','United States of America','USD',NULL),('','Uruguay','UYU',NULL),('','Uzbekistan','UZS',NULL),('','Vanuatu','VUV',NULL),('','Venezuela','VEF',NULL),('','Vietnam','VND',NULL),('','Virgin Islands (U.S.)','USD',NULL),('','Wallis and Futuna Islands','XPF',NULL),('','Western Sahara','MAD',NULL),('','Yemen','YER',NULL),('','Zambia','ZMW',NULL),('','Zimbabwe','ZWL',NULL);
 /*!40000 ALTER TABLE `members_country` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -552,7 +553,7 @@ CREATE TABLE `members_member` (
   CONSTRAINT `members_member_family_id_d7305582_fk_members_family_id` FOREIGN KEY (`family_id`) REFERENCES `members_family` (`id`),
   CONSTRAINT `members_member_spiritual_parent_id_a2148aed_fk_members_m` FOREIGN KEY (`spiritual_parent_id`) REFERENCES `members_member` (`member_id`),
   CONSTRAINT `members_member_spouse_id_aa71a074_fk_members_member_member_id` FOREIGN KEY (`spouse_id`) REFERENCES `members_member` (`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -561,7 +562,7 @@ CREATE TABLE `members_member` (
 
 LOCK TABLES `members_member` WRITE;
 /*!40000 ALTER TABLE `members_member` DISABLE KEYS */;
-INSERT INTO `members_member` VALUES (1,'',1,'Test','Test','Test',1,'2016-10-11','1st Generation','IDK','email@mail.com','09123456789','2025-02-04',1,'2025-02-06','Address Street',1,'Philippines',NULL,NULL,NULL);
+INSERT INTO `members_member` VALUES (1,'',1,'Test','Test','Test',1,'2016-10-11','1st Generation','IDK','email@mail.com','09123456789','2025-02-04',1,'2025-02-06','Address Street',1,'Philippines',NULL,NULL,NULL),(5,'',1,'Rafael Sebastian','de la Cruz','Torres',1,'2003-09-08','1st Generation','idk','rafael@email.com','09123456789','2009-04-23',1,'2022-05-11','123 Address Street',1,'Philippines',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `members_member` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -581,7 +582,7 @@ CREATE TABLE `members_memberworship` (
   KEY `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` (`worship_id`),
   CONSTRAINT `members_memberworshi_member_id_88eab76e_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`),
   CONSTRAINT `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` FOREIGN KEY (`worship_id`) REFERENCES `worship_worship` (`worship_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -590,7 +591,7 @@ CREATE TABLE `members_memberworship` (
 
 LOCK TABLES `members_memberworship` WRITE;
 /*!40000 ALTER TABLE `members_memberworship` DISABLE KEYS */;
-INSERT INTO `members_memberworship` VALUES (1,1,1);
+INSERT INTO `members_memberworship` VALUES (1,1,1),(3,1,9);
 /*!40000 ALTER TABLE `members_memberworship` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -666,7 +667,7 @@ CREATE TABLE `worship_worship` (
   PRIMARY KEY (`worship_id`),
   KEY `worship_worship_church_id_59ac3982_fk_members_church_id` (`church_id`),
   CONSTRAINT `worship_worship_church_id_59ac3982_fk_members_church_id` FOREIGN KEY (`church_id`) REFERENCES `members_church` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -675,7 +676,7 @@ CREATE TABLE `worship_worship` (
 
 LOCK TABLES `worship_worship` WRITE;
 /*!40000 ALTER TABLE `worship_worship` DISABLE KEYS */;
-INSERT INTO `worship_worship` VALUES (1,'sample','2025-03-03',1,1);
+INSERT INTO `worship_worship` VALUES (1,'sample','2025-03-03',1,1),(2,'Sample Event','2015-03-17',1,1),(3,'Test Event','2025-03-15',1,1),(4,'Testing','2015-03-15',1,1),(5,'Testing','2010-12-28',1,1),(6,'Cool Event','2008-11-02',1,1),(7,'asdf','2020-02-03',2,1),(8,'Main Event','2021-07-13',2,2),(9,'Event of the Decade','2021-04-23',1,2);
 /*!40000 ALTER TABLE `worship_worship` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -688,4 +689,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-03 16:05:44
+-- Dump completed on 2025-03-15 20:35:24
