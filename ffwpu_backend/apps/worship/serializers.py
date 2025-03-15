@@ -24,11 +24,9 @@ class GuestSerializer(serializers.ModelSerializer):
 
 class WorshipSerializer(serializers.ModelSerializer):
     attendees = serializers.SerializerMethodField()
-    # worship_type = serializers.CharField(
-    #     source="get_worship_type_display", read_only=True
-    # )
     church = serializers.PrimaryKeyRelatedField(queryset=Church.objects.all())
     guests = serializers.SerializerMethodField()
+    church_name = serializers.CharField(source="church.name", read_only=True)
 
     class Meta:
         model = Worship
@@ -50,10 +48,6 @@ class WorshipSerializer(serializers.ModelSerializer):
     def get_attendees(self, obj):
         members = Member.objects.filter(memberworship__worship=obj)
         return MemberSerializer(members, many=True).data
-
-    def get_church(self, obj):
-        return obj.church.name
-        # return ChurchSerializer(church).data
 
     def get_guests(self, obj):
         guests = Guest.objects.filter(guestworship__worship_id=obj)

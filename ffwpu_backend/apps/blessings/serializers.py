@@ -13,6 +13,7 @@ class BlessingSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
+        data["chaenbo"] = instance.get_chaenbo_display()
         return {
             (
                 string.capwords(key.replace("_", " ")) if key != "id" else "Blessing ID"

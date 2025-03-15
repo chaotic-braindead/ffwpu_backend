@@ -3,6 +3,7 @@ from .models import *
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework.filters import OrderingFilter
+from rest_framework import status
 
 
 class BlessingListCreate(generics.ListCreateAPIView):
@@ -29,7 +30,7 @@ class AddMemberToBlessingView(generics.UpdateAPIView):
     def update(self, request, *args, **kwargs):
         blessing = self.get_object()
         member_ids = request.data.get("members", [])  # Expecting a list of IDs
-
+        print(member_ids)
         try:
             members = Member.objects.filter(member_id__in=member_ids)
             blessing.members.add(*members)  # Use `.add()` for ManyToMany
@@ -43,13 +44,14 @@ class AddMemberToBlessingView(generics.UpdateAPIView):
 class RemoveMemberFromBlessingView(generics.UpdateAPIView):
     queryset = Blessing.objects.all()
     serializer_class = BlessingSerializer
+    permission_classes = []
 
     def update(self, request, *args, **kwargs):
         blessing = self.get_object()
         member_id = request.data.get("member_id")  # Expecting a single member ID
 
         try:
-            member = Member.objects.get(id=member_id)
+            member = Member.objects.get(pk=member_id)
             if member in blessing.members.all():
                 blessing.members.remove(member)  # Removes the member
                 blessing.save()
