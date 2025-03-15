@@ -19,3 +19,4 @@ class DonationRetrieveDeleteUpdate(generics.RetrieveUpdateDestroyAPIView):
     queryset = Donation.objects.select_related("member")
     serializer_class = DonationSerializer
     model = serializer_class.Meta.model
+    permission_classes = []

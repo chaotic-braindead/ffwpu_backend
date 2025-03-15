@@ -18,6 +18,7 @@ class MemberListCreate(generics.ListCreateAPIView):
 class MemberRetrieveDeleteUpdate(generics.RetrieveUpdateDestroyAPIView):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
+    permission_classes = []
 
 
 class ChurchListCreate(generics.ListCreateAPIView):

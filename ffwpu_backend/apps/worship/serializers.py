@@ -1,12 +1,16 @@
 from rest_framework import serializers
 from .models import Worship
-from members.serializers import MemberSerializer
-from members.models import Member, MemberWorship
+from members.serializers import MemberSerializer, ChurchSerializer
+from members.models import Member, MemberWorship, Church
 import string
 
 
 class WorshipSerializer(serializers.ModelSerializer):
     attendees = serializers.SerializerMethodField()
+    # worship_type = serializers.CharField(
+    #     source="get_worship_type_display", read_only=True
+    # )
+    church = serializers.SerializerMethodField()
 
     class Meta:
         model = Worship
@@ -14,6 +18,8 @@ class WorshipSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
+        data["worship_type"] = instance.get_worship_type_display()
+
         return {
             (
                 string.capwords(key.replace("_", " "))
@@ -26,6 +32,10 @@ class WorshipSerializer(serializers.ModelSerializer):
     def get_attendees(self, obj):
         members = Member.objects.filter(memberworship__worship=obj)
         return MemberSerializer(members, many=True).data
+
+    def get_church(self, obj):
+        return obj.church.name
+        # return ChurchSerializer(church).data
 
 
 class MemberWorshipSerializer(serializers.ModelSerializer):
