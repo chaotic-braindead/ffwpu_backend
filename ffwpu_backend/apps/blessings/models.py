@@ -1,5 +1,6 @@
 from django.db import models
 from members.models import Member
+from worship.models import Guest
 
 
 class Blessing(models.Model):
@@ -9,3 +10,8 @@ class Blessing(models.Model):
     chaenbo = models.IntegerField(
         choices=[(1, "Vertical"), (2, "Horizontal")], default=1
     )
+
+
+class GuestBlessing(models.Model):
+    blessing = models.ForeignKey(to=Blessing, on_delete=models.CASCADE)
+    guest = models.ForeignKey(to=Guest, on_delete=models.CASCADE)

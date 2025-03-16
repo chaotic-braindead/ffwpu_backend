@@ -1,11 +1,13 @@
 from rest_framework import serializers
 from .models import *
 from members.serializers import MemberSerializer
+from worship.serializers import GuestSerializer
 import string
 
 
 class BlessingSerializer(serializers.ModelSerializer):
     members = MemberSerializer(many=True, read_only=True)
+    guests = serializers.SerializerMethodField()
 
     class Meta:
         model = Blessing
@@ -20,3 +22,7 @@ class BlessingSerializer(serializers.ModelSerializer):
             ): value
             for key, value in data.items()
         }
+
+    def get_guests(self, obj):
+        guests = Guest.objects.filter(guestblessing__blessing=obj)
+        return GuestSerializer(guests, many=True).data

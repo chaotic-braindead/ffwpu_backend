@@ -6,7 +6,7 @@ from .serializers import DonationSerializer
 
 
 class DonationListCreate(generics.ListCreateAPIView):
-    queryset = Donation.objects.select_related("member")
+    queryset = Donation.objects.all()
     serializer_class = DonationSerializer
     model = serializer_class.Meta.model
     filter_backends = [OrderingFilter, DjangoFilterBackend]
@@ -16,7 +16,7 @@ class DonationListCreate(generics.ListCreateAPIView):
 
 
 class DonationRetrieveDeleteUpdate(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Donation.objects.select_related("member")
+    queryset = Donation.objects.all()
     serializer_class = DonationSerializer
     model = serializer_class.Meta.model
     permission_classes = []

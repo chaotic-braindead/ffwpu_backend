@@ -4,6 +4,8 @@ from .serializers import *
 from rest_framework.response import Response
 from rest_framework.filters import OrderingFilter
 from rest_framework import status
+from django.shortcuts import get_object_or_404
+from rest_framework import views
 
 
 class BlessingListCreate(generics.ListCreateAPIView):
@@ -67,3 +69,55 @@ class RemoveMemberFromBlessingView(generics.UpdateAPIView):
             return Response(
                 {"error": "Member not found"}, status=status.HTTP_404_NOT_FOUND
             )
+
+
+class BlessingAddGuest(views.APIView):
+    permission_classes = []
+
+    def post(self, request, pk):
+        blessing = get_object_or_404(Blessing, pk=pk)
+        name = request.data.get("name")
+        email = request.data.get("email")
+        invited_by = request.data.get("invited_by")
+
+        if not name:
+            return Response(
+                {"error": "name is required"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if not email:
+            return Response(
+                {"error": "email is required"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if invited_by:
+            invited_by = get_object_or_404(Member, pk=invited_by)
+
+        guest = Guest.objects.create(name=name, email=email, invited_by=invited_by)
+        GuestBlessing.objects.create(guest=guest, blessing=blessing)
+        return Response(
+            {"message": "Guest added successfully"}, status=status.HTTP_201_CREATED
+        )
+
+
+class BlessingRemoveGuest(views.APIView):
+    permission_classes = []
+
+    def post(self, request, pk):
+        blessing = get_object_or_404(Blessing, pk=pk)
+        guest_id = request.data.get("guest_id")
+
+        if not guest_id:
+            return Response(
+                {"error": "guest_id is required"}, status=status.HTTP_400_BAD_REQUEST
+            )
+
+        guest = get_object_or_404(Guest, pk=guest_id)
+
+        # Check if the member is already attending this worship
+        if GuestBlessing.objects.filter(guest=guest, blessing=blessing).exists():
+            GuestBlessing.objects.filter(guest=guest, blessing=blessing).delete()
+
+        return Response(
+            {"message": "Guest deleted successfully"}, status=status.HTTP_201_CREATED
+        )
