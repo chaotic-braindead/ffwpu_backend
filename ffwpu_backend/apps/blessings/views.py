@@ -10,7 +10,6 @@ from rest_framework import views
 
 class BlessingListCreate(generics.ListCreateAPIView):
     queryset = Blessing.objects.all()
-    permission_classes = []
     serializer_class = BlessingSerializer
     model = serializer_class.Meta.model
     filter_backends = [OrderingFilter]
@@ -19,7 +18,6 @@ class BlessingListCreate(generics.ListCreateAPIView):
 
 class BlessingRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Blessing.objects.all()
-    permission_classes = []
     serializer_class = BlessingSerializer
     model = serializer_class.Meta.model
 
@@ -27,7 +25,6 @@ class BlessingRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
 class AddMemberToBlessingView(generics.UpdateAPIView):
     queryset = Blessing.objects.all()
     serializer_class = BlessingSerializer
-    permission_classes = []
 
     def update(self, request, *args, **kwargs):
         blessing = self.get_object()
@@ -46,7 +43,6 @@ class AddMemberToBlessingView(generics.UpdateAPIView):
 class RemoveMemberFromBlessingView(generics.UpdateAPIView):
     queryset = Blessing.objects.all()
     serializer_class = BlessingSerializer
-    permission_classes = []
 
     def update(self, request, *args, **kwargs):
         blessing = self.get_object()
@@ -72,8 +68,6 @@ class RemoveMemberFromBlessingView(generics.UpdateAPIView):
 
 
 class BlessingAddGuest(views.APIView):
-    permission_classes = []
-
     def post(self, request, pk):
         blessing = get_object_or_404(Blessing, pk=pk)
         name = request.data.get("name")
@@ -101,8 +95,6 @@ class BlessingAddGuest(views.APIView):
 
 
 class BlessingRemoveGuest(views.APIView):
-    permission_classes = []
-
     def post(self, request, pk):
         blessing = get_object_or_404(Blessing, pk=pk)
         guest_id = request.data.get("guest_id")
