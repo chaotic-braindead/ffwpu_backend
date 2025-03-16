@@ -24,11 +24,9 @@ class WorshipRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
 
 
 class WorshipAddAttendee(views.APIView):
-
     def post(self, request, pk):
         worship = get_object_or_404(Worship, pk=pk)
         member_id = request.data.get("member_id")
-
         if not member_id:
             return Response(
                 {"error": "member_id is required"}, status=status.HTTP_400_BAD_REQUEST
