@@ -76,10 +76,11 @@ class WorshipRemoveAttendee(views.APIView):
 
 
 class WorshipAddGuest(views.APIView):
+    permission_classes = []
+
     def post(self, request, pk):
         worship = get_object_or_404(Worship, pk=pk)
         name = request.data.get("name")
-        nation = request.data.get("nation")
         email = request.data.get("email")
         invited_by = request.data.get("invited_by")
 
@@ -87,29 +88,25 @@ class WorshipAddGuest(views.APIView):
             return Response(
                 {"error": "name is required"}, status=status.HTTP_400_BAD_REQUEST
             )
-        if not nation:
-            return Response(
-                {"error": "nation is required"}, status=status.HTTP_400_BAD_REQUEST
-            )
+
         if not email:
             return Response(
                 {"error": "email is required"}, status=status.HTTP_400_BAD_REQUEST
             )
-        if not invited_by:
-            return Response(
-                {"error": "invited by is required"}, status=status.HTTP_400_BAD_REQUEST
-            )
 
-        guest = Guest.objects.create(
-            name=name, nation=nation, email=email, invited_by=invited_by
-        )
-        GuestWorship.objects.create(guest_id=guest.id, worship_id=worship)
+        if invited_by:
+            invited_by = get_object_or_404(Member, pk=invited_by)
+
+        guest = Guest.objects.create(name=name, email=email, invited_by=invited_by)
+        GuestWorship.objects.create(guest_id=guest, worship_id=worship)
         return Response(
             {"message": "Guest added successfully"}, status=status.HTTP_201_CREATED
         )
 
 
 class WorshipRemoveGuest(views.APIView):
+    permission_classes = []
+
     def post(self, request, pk):
         worship = get_object_or_404(Worship, pk=pk)
         guest_id = request.data.get("guest_id")
@@ -119,11 +116,11 @@ class WorshipRemoveGuest(views.APIView):
                 {"error": "guest_id is required"}, status=status.HTTP_400_BAD_REQUEST
             )
 
-        member = get_object_or_404(Member, pk=guest_id)
+        guest = get_object_or_404(Guest, pk=guest_id)
 
         # Check if the member is already attending this worship
-        if MemberWorship.objects.filter(member=member, worship=worship).exists():
-            MemberWorship.objects.filter(id=guest_id).delete()
+        if GuestWorship.objects.filter(guest_id=guest, worship_id=worship).exists():
+            GuestWorship.objects.filter(guest_id=guest, worship_id=worship).delete()
 
         return Response(
             {"message": "Guest deleted successfully"}, status=status.HTTP_201_CREATED
