@@ -82,7 +82,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add country',7,'add_country'),(26,'Can change country',7,'change_country'),(27,'Can delete country',7,'delete_country'),(28,'Can view country',7,'view_country'),(29,'Can add currency',8,'add_currency'),(30,'Can change currency',8,'change_currency'),(31,'Can delete currency',8,'delete_currency'),(32,'Can view currency',8,'view_currency'),(33,'Can add church',9,'add_church'),(34,'Can change church',9,'change_church'),(35,'Can delete church',9,'delete_church'),(36,'Can view church',9,'view_church'),(37,'Can add family',10,'add_family'),(38,'Can change family',10,'change_family'),(39,'Can delete family',10,'delete_family'),(40,'Can view family',10,'view_family'),(41,'Can add member',11,'add_member'),(42,'Can change member',11,'change_member'),(43,'Can delete member',11,'delete_member'),(44,'Can view member',11,'view_member'),(45,'Can add blessing',12,'add_blessing'),(46,'Can change blessing',12,'change_blessing'),(47,'Can delete blessing',12,'delete_blessing'),(48,'Can view blessing',12,'view_blessing'),(49,'Can add blessing list',13,'add_blessinglist'),(50,'Can change blessing list',13,'change_blessinglist'),(51,'Can delete blessing list',13,'delete_blessinglist'),(52,'Can view blessing list',13,'view_blessinglist'),(53,'Can add donation',14,'add_donation'),(54,'Can change donation',14,'change_donation'),(55,'Can delete donation',14,'delete_donation'),(56,'Can view donation',14,'view_donation'),(57,'Can add Token',15,'add_token'),(58,'Can change Token',15,'change_token'),(59,'Can delete Token',15,'delete_token'),(60,'Can view Token',15,'view_token'),(61,'Can add Token',16,'add_tokenproxy'),(62,'Can change Token',16,'change_tokenproxy'),(63,'Can delete Token',16,'delete_tokenproxy'),(64,'Can view Token',16,'view_tokenproxy'),(65,'Can add worship',17,'add_worship'),(66,'Can change worship',17,'change_worship'),(67,'Can delete worship',17,'delete_worship'),(68,'Can view worship',17,'view_worship'),(69,'Can add member worship',18,'add_memberworship'),(70,'Can change member worship',18,'change_memberworship'),(71,'Can delete member worship',18,'delete_memberworship'),(72,'Can view member worship',18,'view_memberworship'),(73,'Can add guest worship',19,'add_guestworship'),(74,'Can change guest worship',19,'change_guestworship'),(75,'Can delete guest worship',19,'delete_guestworship'),(76,'Can view guest worship',19,'view_guestworship'),(77,'Can add guest',20,'add_guest'),(78,'Can change guest',20,'change_guest'),(79,'Can delete guest',20,'delete_guest'),(80,'Can view guest',20,'view_guest');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add country',7,'add_country'),(26,'Can change country',7,'change_country'),(27,'Can delete country',7,'delete_country'),(28,'Can view country',7,'view_country'),(29,'Can add currency',8,'add_currency'),(30,'Can change currency',8,'change_currency'),(31,'Can delete currency',8,'delete_currency'),(32,'Can view currency',8,'view_currency'),(33,'Can add church',9,'add_church'),(34,'Can change church',9,'change_church'),(35,'Can delete church',9,'delete_church'),(36,'Can view church',9,'view_church'),(37,'Can add family',10,'add_family'),(38,'Can change family',10,'change_family'),(39,'Can delete family',10,'delete_family'),(40,'Can view family',10,'view_family'),(41,'Can add member',11,'add_member'),(42,'Can change member',11,'change_member'),(43,'Can delete member',11,'delete_member'),(44,'Can view member',11,'view_member'),(45,'Can add blessing',12,'add_blessing'),(46,'Can change blessing',12,'change_blessing'),(47,'Can delete blessing',12,'delete_blessing'),(48,'Can view blessing',12,'view_blessing'),(49,'Can add blessing list',13,'add_blessinglist'),(50,'Can change blessing list',13,'change_blessinglist'),(51,'Can delete blessing list',13,'delete_blessinglist'),(52,'Can view blessing list',13,'view_blessinglist'),(53,'Can add donation',14,'add_donation'),(54,'Can change donation',14,'change_donation'),(55,'Can delete donation',14,'delete_donation'),(56,'Can view donation',14,'view_donation'),(57,'Can add Token',15,'add_token'),(58,'Can change Token',15,'change_token'),(59,'Can delete Token',15,'delete_token'),(60,'Can view Token',15,'view_token'),(61,'Can add Token',16,'add_tokenproxy'),(62,'Can change Token',16,'change_tokenproxy'),(63,'Can delete Token',16,'delete_tokenproxy'),(64,'Can view Token',16,'view_tokenproxy'),(65,'Can add worship',17,'add_worship'),(66,'Can change worship',17,'change_worship'),(67,'Can delete worship',17,'delete_worship'),(68,'Can view worship',17,'view_worship'),(69,'Can add member worship',18,'add_memberworship'),(70,'Can change member worship',18,'change_memberworship'),(71,'Can delete member worship',18,'delete_memberworship'),(72,'Can view member worship',18,'view_memberworship'),(73,'Can add guest worship',19,'add_guestworship'),(74,'Can change guest worship',19,'change_guestworship'),(75,'Can delete guest worship',19,'delete_guestworship'),(76,'Can view guest worship',19,'view_guestworship'),(77,'Can add guest',20,'add_guest'),(78,'Can change guest',20,'change_guest'),(79,'Can delete guest',20,'delete_guest'),(80,'Can view guest',20,'view_guest'),(81,'Can add guest blessing',21,'add_guestblessing'),(82,'Can change guest blessing',21,'change_guestblessing'),(83,'Can delete guest blessing',21,'delete_guestblessing'),(84,'Can view guest blessing',21,'view_guestblessing');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,8 +222,9 @@ CREATE TABLE `blessings_blessing` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `blessing_date` date NOT NULL,
   `name_of_blessing` varchar(255) NOT NULL,
+  `chaenbo` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -232,7 +233,7 @@ CREATE TABLE `blessings_blessing` (
 
 LOCK TABLES `blessings_blessing` WRITE;
 /*!40000 ALTER TABLE `blessings_blessing` DISABLE KEYS */;
-INSERT INTO `blessings_blessing` VALUES (1,'2025-03-03','test');
+INSERT INTO `blessings_blessing` VALUES (1,'2025-03-03','test',1),(3,'2003-09-08','ea',1),(5,'2005-01-02','bless you',2),(6,'2007-01-02','gbu',1),(7,'2016-01-21','blessing',1),(8,'2007-01-02','bless you too',1),(9,'2023-04-23','i bless the rains down in africa',2),(10,'2025-03-16','guest blessing',2);
 /*!40000 ALTER TABLE `blessings_blessing` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,7 +253,7 @@ CREATE TABLE `blessings_blessing_members` (
   KEY `blessings_blessing_m_member_id_23278890_fk_members_m` (`member_id`),
   CONSTRAINT `blessings_blessing_m_blessing_id_6b2a1021_fk_blessings` FOREIGN KEY (`blessing_id`) REFERENCES `blessings_blessing` (`id`),
   CONSTRAINT `blessings_blessing_m_member_id_23278890_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -261,8 +262,37 @@ CREATE TABLE `blessings_blessing_members` (
 
 LOCK TABLES `blessings_blessing_members` WRITE;
 /*!40000 ALTER TABLE `blessings_blessing_members` DISABLE KEYS */;
-INSERT INTO `blessings_blessing_members` VALUES (1,1,1);
+INSERT INTO `blessings_blessing_members` VALUES (1,1,1),(5,6,5),(11,8,1),(12,8,5),(23,9,5);
 /*!40000 ALTER TABLE `blessings_blessing_members` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `blessings_guestblessing`
+--
+
+DROP TABLE IF EXISTS `blessings_guestblessing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `blessings_guestblessing` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `blessing_id` bigint(20) NOT NULL,
+  `guest_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `blessings_guestbless_blessing_id_10281ffb_fk_blessings` (`blessing_id`),
+  KEY `blessings_guestblessing_guest_id_e80d104d_fk_worship_guest_id` (`guest_id`),
+  CONSTRAINT `blessings_guestbless_blessing_id_10281ffb_fk_blessings` FOREIGN KEY (`blessing_id`) REFERENCES `blessings_blessing` (`id`),
+  CONSTRAINT `blessings_guestblessing_guest_id_e80d104d_fk_worship_guest_id` FOREIGN KEY (`guest_id`) REFERENCES `worship_guest` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `blessings_guestblessing`
+--
+
+LOCK TABLES `blessings_guestblessing` WRITE;
+/*!40000 ALTER TABLE `blessings_guestblessing` DISABLE KEYS */;
+INSERT INTO `blessings_guestblessing` VALUES (1,10,9),(4,10,11),(7,10,14);
+/*!40000 ALTER TABLE `blessings_guestblessing` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -311,7 +341,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -320,7 +350,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(15,'authtoken','token'),(16,'authtoken','tokenproxy'),(12,'blessings','blessing'),(13,'blessings','blessinglist'),(5,'contenttypes','contenttype'),(14,'donations','donation'),(9,'members','church'),(7,'members','country'),(8,'members','currency'),(10,'members','family'),(11,'members','member'),(18,'members','memberworship'),(6,'sessions','session'),(20,'worship','guest'),(19,'worship','guestworship'),(17,'worship','worship');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(15,'authtoken','token'),(16,'authtoken','tokenproxy'),(12,'blessings','blessing'),(13,'blessings','blessinglist'),(21,'blessings','guestblessing'),(5,'contenttypes','contenttype'),(14,'donations','donation'),(9,'members','church'),(7,'members','country'),(8,'members','currency'),(10,'members','family'),(11,'members','member'),(18,'members','memberworship'),(6,'sessions','session'),(20,'worship','guest'),(19,'worship','guestworship'),(17,'worship','worship');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -337,7 +367,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -346,7 +376,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'members','0001_initial','2025-02-11 11:32:06.658838'),(2,'blessings','0001_initial','2025-02-11 11:32:10.414616'),(3,'donations','0001_initial','2025-02-11 11:32:20.880503'),(4,'contenttypes','0001_initial','2025-02-11 11:32:44.186799'),(5,'auth','0001_initial','2025-02-11 11:32:44.624242'),(6,'admin','0001_initial','2025-02-11 11:32:44.718057'),(7,'admin','0002_logentry_remove_auto_add','2025-02-11 11:32:44.733671'),(8,'admin','0003_logentry_add_action_flag_choices','2025-02-11 11:32:44.733671'),(9,'contenttypes','0002_remove_content_type_name','2025-02-11 11:32:44.811723'),(10,'auth','0002_alter_permission_name_max_length','2025-02-11 11:32:44.843052'),(11,'auth','0003_alter_user_email_max_length','2025-02-11 11:32:44.874333'),(12,'auth','0004_alter_user_username_opts','2025-02-11 11:32:44.889948'),(13,'auth','0005_alter_user_last_login_null','2025-02-11 11:32:45.155552'),(14,'auth','0006_require_contenttypes_0002','2025-02-11 11:32:45.171176'),(15,'auth','0007_alter_validators_add_error_messages','2025-02-11 11:32:45.171176'),(16,'auth','0008_alter_user_username_max_length','2025-02-11 11:32:45.202350'),(17,'auth','0009_alter_user_last_name_max_length','2025-02-11 11:32:45.233599'),(18,'auth','0010_alter_group_name_max_length','2025-02-11 11:32:45.249258'),(19,'auth','0011_update_proxy_permissions','2025-02-11 11:32:45.264920'),(20,'auth','0012_alter_user_first_name_max_length','2025-02-11 11:32:45.296178'),(21,'authtoken','0001_initial','2025-02-11 11:32:45.343077'),(22,'authtoken','0002_auto_20160226_1747','2025-02-11 11:32:45.374290'),(23,'authtoken','0003_tokenproxy','2025-02-11 11:32:45.374290'),(24,'authtoken','0004_alter_tokenproxy_options','2025-02-11 11:32:45.389977'),(25,'sessions','0001_initial','2025-02-11 11:32:45.452409'),(26,'members','0002_country_region','2025-02-23 16:55:07.362383'),(27,'worship','0001_initial','2025-02-23 17:35:22.808740'),(28,'members','0003_memberworship_member_worships_and_more','2025-02-23 17:59:42.498446'),(29,'worship','0002_guest_guestworship','2025-03-01 07:27:36.419081'),(30,'blessings','0002_blessing_id_alter_blessing_name_of_blessing','2025-03-03 07:29:13.863796'),(31,'blessings','0003_blessing_members_delete_blessinglist','2025-03-03 07:48:44.308221');
+INSERT INTO `django_migrations` VALUES (1,'members','0001_initial','2025-02-11 11:32:06.658838'),(2,'blessings','0001_initial','2025-02-11 11:32:10.414616'),(3,'donations','0001_initial','2025-02-11 11:32:20.880503'),(4,'contenttypes','0001_initial','2025-02-11 11:32:44.186799'),(5,'auth','0001_initial','2025-02-11 11:32:44.624242'),(6,'admin','0001_initial','2025-02-11 11:32:44.718057'),(7,'admin','0002_logentry_remove_auto_add','2025-02-11 11:32:44.733671'),(8,'admin','0003_logentry_add_action_flag_choices','2025-02-11 11:32:44.733671'),(9,'contenttypes','0002_remove_content_type_name','2025-02-11 11:32:44.811723'),(10,'auth','0002_alter_permission_name_max_length','2025-02-11 11:32:44.843052'),(11,'auth','0003_alter_user_email_max_length','2025-02-11 11:32:44.874333'),(12,'auth','0004_alter_user_username_opts','2025-02-11 11:32:44.889948'),(13,'auth','0005_alter_user_last_login_null','2025-02-11 11:32:45.155552'),(14,'auth','0006_require_contenttypes_0002','2025-02-11 11:32:45.171176'),(15,'auth','0007_alter_validators_add_error_messages','2025-02-11 11:32:45.171176'),(16,'auth','0008_alter_user_username_max_length','2025-02-11 11:32:45.202350'),(17,'auth','0009_alter_user_last_name_max_length','2025-02-11 11:32:45.233599'),(18,'auth','0010_alter_group_name_max_length','2025-02-11 11:32:45.249258'),(19,'auth','0011_update_proxy_permissions','2025-02-11 11:32:45.264920'),(20,'auth','0012_alter_user_first_name_max_length','2025-02-11 11:32:45.296178'),(21,'authtoken','0001_initial','2025-02-11 11:32:45.343077'),(22,'authtoken','0002_auto_20160226_1747','2025-02-11 11:32:45.374290'),(23,'authtoken','0003_tokenproxy','2025-02-11 11:32:45.374290'),(24,'authtoken','0004_alter_tokenproxy_options','2025-02-11 11:32:45.389977'),(25,'sessions','0001_initial','2025-02-11 11:32:45.452409'),(26,'members','0002_country_region','2025-02-23 16:55:07.362383'),(27,'worship','0001_initial','2025-02-23 17:35:22.808740'),(28,'members','0003_memberworship_member_worships_and_more','2025-02-23 17:59:42.498446'),(29,'worship','0002_guest_guestworship','2025-03-01 07:27:36.419081'),(30,'blessings','0002_blessing_id_alter_blessing_name_of_blessing','2025-03-03 07:29:13.863796'),(31,'blessings','0003_blessing_members_delete_blessinglist','2025-03-03 07:48:44.308221'),(32,'blessings','0004_blessing_chaenbo','2025-03-15 15:44:32.487973'),(33,'worship','0003_alter_guest_invited_by','2025-03-16 02:54:57.807586'),(34,'worship','0004_remove_guest_nation','2025-03-16 02:56:40.638973'),(35,'blessings','0005_guestblessing','2025-03-16 03:31:08.200134');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -396,7 +426,7 @@ CREATE TABLE `donations_donation` (
   CONSTRAINT `donations_donation_church_id_9a67bd17_fk_members_church_id` FOREIGN KEY (`church_id`) REFERENCES `members_church` (`id`),
   CONSTRAINT `donations_donation_currency_id_65955642_fk_members_currency_code` FOREIGN KEY (`currency_id`) REFERENCES `members_currency` (`code`),
   CONSTRAINT `donations_donation_member_id_216189e2_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,7 +435,7 @@ CREATE TABLE `donations_donation` (
 
 LOCK TABLES `donations_donation` WRITE;
 /*!40000 ALTER TABLE `donations_donation` DISABLE KEYS */;
-INSERT INTO `donations_donation` VALUES (1,'2025-03-15',500.00,1,'PHP',1);
+INSERT INTO `donations_donation` VALUES (1,'2025-03-15',502.00,1,'EUR',1),(3,'2003-09-08',1000.00,1,'PHP',1),(4,'2003-09-08',500.00,1,'USD',5);
 /*!40000 ALTER TABLE `donations_donation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -582,7 +612,7 @@ CREATE TABLE `members_memberworship` (
   KEY `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` (`worship_id`),
   CONSTRAINT `members_memberworshi_member_id_88eab76e_fk_members_m` FOREIGN KEY (`member_id`) REFERENCES `members_member` (`member_id`),
   CONSTRAINT `members_memberworshi_worship_id_d7ee3e35_fk_worship_w` FOREIGN KEY (`worship_id`) REFERENCES `worship_worship` (`worship_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -591,7 +621,7 @@ CREATE TABLE `members_memberworship` (
 
 LOCK TABLES `members_memberworship` WRITE;
 /*!40000 ALTER TABLE `members_memberworship` DISABLE KEYS */;
-INSERT INTO `members_memberworship` VALUES (1,1,1),(3,1,9);
+INSERT INTO `members_memberworship` VALUES (1,1,1),(3,1,9),(7,1,14),(9,1,15),(6,5,8),(8,5,14);
 /*!40000 ALTER TABLE `members_memberworship` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -605,13 +635,12 @@ DROP TABLE IF EXISTS `worship_guest`;
 CREATE TABLE `worship_guest` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `nation` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `invited_by_id` int(11) NOT NULL,
+  `invited_by_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `worship_guest_invited_by_id_43e06818_fk_members_member_member_id` (`invited_by_id`),
   CONSTRAINT `worship_guest_invited_by_id_43e06818_fk_members_member_member_id` FOREIGN KEY (`invited_by_id`) REFERENCES `members_member` (`member_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -620,6 +649,7 @@ CREATE TABLE `worship_guest` (
 
 LOCK TABLES `worship_guest` WRITE;
 /*!40000 ALTER TABLE `worship_guest` DISABLE KEYS */;
+INSERT INTO `worship_guest` VALUES (1,'John','email@email.com',NULL),(2,'John','email@email.com',NULL),(3,'John','email@email.com',NULL),(4,'John','email@email.com',NULL),(5,'Kelly','k@email.com',1),(6,'Sample','s@email.com',NULL),(7,'John','email@email.com',NULL),(8,'Test','test@email.com',NULL),(9,'John','john@mail.com',1),(10,'John','john@mail.com',NULL),(11,'asdf','asdf',NULL),(12,'John','john@mail.com',NULL),(13,'asdf','asdf',NULL),(14,'sample','sample@smaple.com',1);
 /*!40000 ALTER TABLE `worship_guest` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -639,7 +669,7 @@ CREATE TABLE `worship_guestworship` (
   KEY `worship_guestworship_worship_id_id_f474d97a_fk_worship_w` (`worship_id_id`),
   CONSTRAINT `worship_guestworship_guest_id_id_4f466c58_fk_worship_guest_id` FOREIGN KEY (`guest_id_id`) REFERENCES `worship_guest` (`id`),
   CONSTRAINT `worship_guestworship_worship_id_id_f474d97a_fk_worship_w` FOREIGN KEY (`worship_id_id`) REFERENCES `worship_worship` (`worship_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -648,6 +678,7 @@ CREATE TABLE `worship_guestworship` (
 
 LOCK TABLES `worship_guestworship` WRITE;
 /*!40000 ALTER TABLE `worship_guestworship` DISABLE KEYS */;
+INSERT INTO `worship_guestworship` VALUES (1,2,14),(4,5,14),(5,6,14),(6,7,15);
 /*!40000 ALTER TABLE `worship_guestworship` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -667,7 +698,7 @@ CREATE TABLE `worship_worship` (
   PRIMARY KEY (`worship_id`),
   KEY `worship_worship_church_id_59ac3982_fk_members_church_id` (`church_id`),
   CONSTRAINT `worship_worship_church_id_59ac3982_fk_members_church_id` FOREIGN KEY (`church_id`) REFERENCES `members_church` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -676,7 +707,7 @@ CREATE TABLE `worship_worship` (
 
 LOCK TABLES `worship_worship` WRITE;
 /*!40000 ALTER TABLE `worship_worship` DISABLE KEYS */;
-INSERT INTO `worship_worship` VALUES (1,'sample','2025-03-03',1,1),(2,'Sample Event','2015-03-17',1,1),(3,'Test Event','2025-03-15',1,1),(4,'Testing','2015-03-15',1,1),(5,'Testing','2010-12-28',1,1),(6,'Cool Event','2008-11-02',1,1),(7,'asdf','2020-02-03',2,1),(8,'Main Event','2021-07-13',2,2),(9,'Event of the Decade','2021-04-23',1,2);
+INSERT INTO `worship_worship` VALUES (1,'sample','2025-03-03',1,1),(2,'Sample Event','2015-03-17',1,2),(3,'Test Event','2025-03-15',1,1),(4,'Testing','2015-03-15',1,1),(5,'Testing','2010-12-28',1,1),(6,'Cool Event','2008-11-02',1,1),(7,'Event Name','2020-02-03',2,2),(8,'Greatest Event Ever','2021-07-13',2,2),(9,'Event of the Decade','2021-04-23',1,2),(10,'guest event','2002-05-30',1,1),(11,'guest event2','2002-05-30',1,1),(12,'guest event3','2002-05-30',1,1),(13,'guest event4','2002-05-30',1,1),(14,'guest event5','2002-05-30',1,1),(15,'guest event6','2005-05-30',1,2);
 /*!40000 ALTER TABLE `worship_worship` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -689,4 +720,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-15 20:35:24
+-- Dump completed on 2025-03-16 12:46:11
