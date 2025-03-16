@@ -14,7 +14,6 @@ class WorshipListCreate(generics.ListCreateAPIView):
     serializer_class = WorshipSerializer
     model = serializer_class.Meta.model
     filter_backends = [OrderingFilter, DjangoFilterBackend]
-    permission_classes = []
     ordering_fields = ["date"]
     filterset_fields = ["worship_type"]
 
@@ -22,11 +21,9 @@ class WorshipListCreate(generics.ListCreateAPIView):
 class WorshipRetrieveUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Worship.objects.all()
     serializer_class = WorshipSerializer
-    permission_classes = []
 
 
 class WorshipAddAttendee(views.APIView):
-    permission_classes = []
 
     def post(self, request, pk):
         worship = get_object_or_404(Worship, pk=pk)
@@ -76,7 +73,6 @@ class WorshipRemoveAttendee(views.APIView):
 
 
 class WorshipAddGuest(views.APIView):
-    permission_classes = []
 
     def post(self, request, pk):
         worship = get_object_or_404(Worship, pk=pk)
@@ -105,7 +101,6 @@ class WorshipAddGuest(views.APIView):
 
 
 class WorshipRemoveGuest(views.APIView):
-    permission_classes = []
 
     def post(self, request, pk):
         worship = get_object_or_404(Worship, pk=pk)

@@ -61,6 +61,7 @@ class MemberSerializer(serializers.ModelSerializer):
     age = serializers.ReadOnlyField()
     region = serializers.CharField(source="country.region", read_only=True)
     worships = serializers.SerializerMethodField()
+    blessings = serializers.SerializerMethodField()
 
     class Meta:
         model = Member
@@ -73,6 +74,7 @@ class MemberSerializer(serializers.ModelSerializer):
         data["title"] = instance.get_title_display()
         data["marital_status"] = instance.get_marital_status_display()
         data["membership_category"] = instance.get_membership_category_display()
+
         return {
             (
                 string.capwords(key.replace("_", " "))
@@ -91,6 +93,18 @@ class MemberSerializer(serializers.ModelSerializer):
                 "Church": worship.church.name,
             }
             for worship in obj.worships.all()
+        ]
+
+    def get_blessings(self, obj):
+
+        return [
+            {
+                "ID": blessing.id,
+                "Blessing Date": blessing.blessing_date,
+                "Name Of Blessing": blessing.name_of_blessing,
+                "Chaenbo": blessing.chaenbo,
+            }
+            for blessing in obj.blessings.all()
         ]
 
     # def create(self, validated_data):
