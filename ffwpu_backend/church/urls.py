@@ -6,4 +6,4 @@ from .views import *
 router = DefaultRouter()
 router.register(r"", ChurchViewSet)
 
-url_patterns = [path("", include(router.urls))]
+urlpatterns = [path("", include(router.urls))]

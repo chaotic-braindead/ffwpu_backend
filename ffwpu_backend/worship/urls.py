@@ -6,4 +6,4 @@ router = DefaultRouter()
 router.register(r"", WorshipEventViewSet)
 router.register(r"attendee", WorshipAttendeeViewSet)
 
-url_patterns = [path("", router.urls)]
+urlpatterns = [path("", include(router.urls))]

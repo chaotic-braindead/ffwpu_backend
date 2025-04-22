@@ -21,7 +21,7 @@ class WorshipEvent(models.Model):
     event_name = models.CharField(max_length=255)
     date = models.DateField()
     worship_type = models.TextField(choices=Type)
-    church = models.ForeignKey(to="church.Church", on_delete=models.SET_NULL)
+    church = models.ForeignKey(to="church.Church", on_delete=models.CASCADE)
     photo = models.ImageField(upload_to=upload_worship_photo, blank=True, null=True)
 
 
@@ -30,13 +30,21 @@ class WorshipAttendee(models.Model):
         MEMBER = "Member"
         GUEST = "Guest"
 
-    worship = models.ForeignKey(to=WorshipEvent, on_delete=models.SET_NULL)
+    worship = models.ForeignKey(to=WorshipEvent, on_delete=models.CASCADE)
     type = models.TextField(choices=Type)
     member = models.ForeignKey(
-        to="member.Member", on_delete=models.CASCADE, null=True, blank=True
+        to="member.Member",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="worship_member",
     )
     full_name = models.CharField(max_length=255, blank=True, null=True)
     email = models.CharField(max_length=255, blank=True, null=True)
     invited_by = models.ForeignKey(
-        to="member.Member", on_delete=models.SET_NULL, null=True, blank=True
+        to="member.Member",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="worship_invited_by",
     )

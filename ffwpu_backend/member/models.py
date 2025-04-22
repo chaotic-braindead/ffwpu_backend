@@ -34,7 +34,7 @@ class Member(models.Model):
     family_name = models.CharField(max_length=255)
     gender = models.TextField(choices=Gender)
     birthday = models.DateField()
-    region = models.ForeignKey(to="region.Region", on_delete=models.SET_NULL)
+    region = models.ForeignKey(to="region.Region", on_delete=models.CASCADE)
     nation = models.CharField(max_length=255)
     marital_status = models.TextField(choices=MaritalStatus)
     name_of_spouse = models.CharField(max_length=255, null=True, blank=True)

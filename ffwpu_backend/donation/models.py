@@ -7,4 +7,4 @@ class Donation(models.Model):
     date = models.DateField()
     church = models.ForeignKey(to="church.Church", on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    currency = models.CharField(255)
+    currency = models.CharField(max_length=255)

@@ -6,4 +6,4 @@ router = DefaultRouter()
 router.register(r"", BlessingViewSet)
 router.register(r"recipient", BlessingRecipientViewSet)
 
-url_patterns = [path("", include(router.urls))]
+urlpatterns = [path("", include(router.urls))]

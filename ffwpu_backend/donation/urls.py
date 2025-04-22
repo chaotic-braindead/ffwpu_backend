@@ -5,4 +5,4 @@ from .views import *
 router = DefaultRouter()
 router.register(r"", DonationViewSet)
 
-url_patterns = [path("", include(router.urls))]
+urlpatterns = [path("", include(router.urls))]
