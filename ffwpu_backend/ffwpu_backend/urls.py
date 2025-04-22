@@ -26,7 +26,7 @@ urlpatterns = [
     path("api/blessing/", include("blessing.urls")),
     path("api/worship/", include("worship.urls")),
     path("api/donation/", include("donation.urls")),
-    path("api/region/", include("region.urls")),
+    path("api/", include("region.urls")),
     path("api/church/", include("church.urls")),
     path("api/login/", TokenObtainPairView.as_view()),
     path("api/refresh-token/", TokenRefreshView.as_view()),
