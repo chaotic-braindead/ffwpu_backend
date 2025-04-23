@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-
+from .views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -30,4 +30,6 @@ urlpatterns = [
     path("api/church/", include("church.urls")),
     path("api/login/", TokenObtainPairView.as_view()),
     path("api/refresh-token/", TokenRefreshView.as_view()),
+    path("api/add-admin/", admin_add),
+    path("api/check-auth/", check_auth),
 ]
