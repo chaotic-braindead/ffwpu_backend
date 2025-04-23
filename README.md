@@ -39,7 +39,7 @@
    python manage.py runserver
    ```
 
-## NOTE: A default admin credentials is already created within the db dump:
+## NOTE: You can use the default admin credentials created within the db dump:
 
 username: `admin`  
 password: `admin`
