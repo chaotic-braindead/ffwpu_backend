@@ -6,7 +6,7 @@ from django.utils.text import slugify
 
 def upload_worship_photo(instance, filename):
     ext = filename.split(".")[-1]
-    name = slugify(instance.name)
+    name = slugify(instance.worship.event_name)
     # Optional: generate a unique ID to prevent file overwrites
     filename = f"{name}-{uuid.uuid4().hex[:8]}.{ext}"
     return os.path.join("worship/photos/", filename)
@@ -22,7 +22,6 @@ class WorshipEvent(models.Model):
     date = models.DateField()
     worship_type = models.TextField(choices=Type)
     church = models.ForeignKey(to="church.Church", on_delete=models.CASCADE)
-    photo = models.ImageField(upload_to=upload_worship_photo, blank=True, null=True)
 
 
 class WorshipAttendee(models.Model):
@@ -48,3 +47,8 @@ class WorshipAttendee(models.Model):
         blank=True,
         related_name="worship_invited_by",
     )
+
+
+class WorshipImage(models.Model):
+    worship = models.ForeignKey(to=WorshipEvent, on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to=upload_worship_photo, blank=True, null=True)

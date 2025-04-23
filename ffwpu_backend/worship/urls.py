@@ -3,7 +3,8 @@ from django.urls import path, include
 from .views import *
 
 router = DefaultRouter()
-router.register(r"", WorshipEventViewSet)
-router.register(r"attendee", WorshipAttendeeViewSet)
+router.register(r"worship", WorshipEventViewSet)
+router.register(r"worship-attendee", WorshipAttendeeViewSet)
+router.register(r"worship-image", WorshipImageViewSet)
 
 urlpatterns = [path("", include(router.urls))]

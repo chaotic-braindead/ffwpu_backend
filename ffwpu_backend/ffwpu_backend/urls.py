@@ -24,7 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("member.urls")),
     path("api/blessing/", include("blessing.urls")),
-    path("api/worship/", include("worship.urls")),
+    path("api/", include("worship.urls")),
     path("api/donation/", include("donation.urls")),
     path("api/", include("region.urls")),
     path("api/church/", include("church.urls")),
