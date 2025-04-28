@@ -73,7 +73,9 @@ class Member(models.Model):
 
 
 class MemberMission(models.Model):
-    member = models.ForeignKey(to=Member, on_delete=models.CASCADE)
+    member = models.ForeignKey(
+        to=Member, on_delete=models.CASCADE, related_name="missions"
+    )
     role = models.CharField(max_length=255)
     organization = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
