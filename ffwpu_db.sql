@@ -433,7 +433,7 @@ CREATE TABLE `donation_donation` (
   KEY `donation_donation_member_id_f463508f_fk_member_member_id` (`member_id`),
   CONSTRAINT `donation_donation_church_id_a7eb7939_fk_church_church_id` FOREIGN KEY (`church_id`) REFERENCES `church_church` (`id`),
   CONSTRAINT `donation_donation_member_id_f463508f_fk_member_member_id` FOREIGN KEY (`member_id`) REFERENCES `member_member` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -442,7 +442,7 @@ CREATE TABLE `donation_donation` (
 
 LOCK TABLES `donation_donation` WRITE;
 /*!40000 ALTER TABLE `donation_donation` DISABLE KEYS */;
-INSERT INTO `donation_donation` VALUES (1,'2025-04-23',6000.00,'PHP',3,18);
+INSERT INTO `donation_donation` VALUES (1,'2025-04-23',6000.00,'PHP',3,18),(3,'2025-04-28',9600.00,'PHP',3,1),(4,'2025-04-27',15000.00,'PHP',2,18),(5,'2025-04-01',2000.00,'PHP',2,18),(6,'2025-04-25',10000.00,'PHP',2,18),(7,'2025-04-28',10000.00,'PHP',3,18),(8,'2025-04-29',5000.00,'PHP',2,1);
 /*!40000 ALTER TABLE `donation_donation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -479,7 +479,7 @@ CREATE TABLE `member_member` (
   KEY `member_member_subregion_id_ca277fea_fk_region_subregion_id` (`subregion_id`),
   CONSTRAINT `member_member_region_id_d89c5df3_fk_region_region_id` FOREIGN KEY (`region_id`) REFERENCES `region_region` (`id`),
   CONSTRAINT `member_member_subregion_id_ca277fea_fk_region_subregion_id` FOREIGN KEY (`subregion_id`) REFERENCES `region_subregion` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -488,7 +488,7 @@ CREATE TABLE `member_member` (
 
 LOCK TABLES `member_member` WRITE;
 /*!40000 ALTER TABLE `member_member` DISABLE KEYS */;
-INSERT INTO `member_member` VALUES (1,'asf','asdf','asdf','Male','2025-04-22','Philippines','Single','','09123456789','email@mail.com','12341adfsdf','','1st Generation','asdf','2025-04-22','aasdf','Regular',3,1),(18,'Rafael Sebastian','de la Cruz','Torres','Male','2003-09-08','Philippines','Single','','09123456788','rafael@email.com','123 Address Street','','1st Generation','Blessed','2007-08-09','Arthur Morgan','Regular',3,1);
+INSERT INTO `member_member` VALUES (1,'asf','asdf','asdf','Male','2025-04-22','Philippines','Single','','09123456789','email@mail.com','12341adfsdf','','1st Generation','asdf','2025-04-22','aasdf','Regular',3,1),(18,'Rafael Sebastian','de la Cruz','Torres','Male','2003-09-08','Philippines','Single','','09123456788','rafael@email.com','123 Address Street','','1st Generation','Blessed','2007-08-09','Arthur Morgan','Regular',3,1),(20,'Juan Paolo','Balba','Dionisio','Male','2002-11-12','Philippines','Single','','09123456789','mail@mai.com','123 Address Street','member/photos/juan-paolo-balba-dionisio-853da7d6.jpg','1st Generation','Blessed','2005-11-04','Arthur Morgan','Regular',3,1),(21,'James','','Adams','Male','2005-04-09','Philippines','Single','','09132456788','james@mail.com','123 Address Street','','1st Generation','Blessed','2007-11-12','John Marston','Regular',3,1);
 /*!40000 ALTER TABLE `member_member` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -510,7 +510,7 @@ CREATE TABLE `member_membermission` (
   PRIMARY KEY (`id`),
   KEY `member_membermission_member_id_7c888b42_fk_member_member_id` (`member_id`),
   CONSTRAINT `member_membermission_member_id_7c888b42_fk_member_member_id` FOREIGN KEY (`member_id`) REFERENCES `member_member` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -519,7 +519,7 @@ CREATE TABLE `member_membermission` (
 
 LOCK TABLES `member_membermission` WRITE;
 /*!40000 ALTER TABLE `member_membermission` DISABLE KEYS */;
-INSERT INTO `member_membermission` VALUES (1,'Mission #1','Organization Organiz','Philippines','2015-09-04','2017-03-30',18),(3,'Mission #2','Org','Philippines','2020-10-20','2020-12-20',18);
+INSERT INTO `member_membermission` VALUES (1,'Mission #1','Organization Organization','Philippines','2015-09-04','2017-03-30',18),(5,'Mission #2','Org','Philippines','2019-05-28','2020-11-21',18),(6,'Mission Impossible','Org','United States','2017-04-25','2019-11-04',20),(7,'Test','org','Philippines','2010-02-22','2011-05-23',21);
 /*!40000 ALTER TABLE `member_membermission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -596,7 +596,7 @@ CREATE TABLE `worship_worshipattendee` (
   CONSTRAINT `worship_worshipatten_invited_by_id_84bbe4e8_fk_member_me` FOREIGN KEY (`invited_by_id`) REFERENCES `member_member` (`id`),
   CONSTRAINT `worship_worshipatten_worship_id_6a5ecb08_fk_worship_w` FOREIGN KEY (`worship_id`) REFERENCES `worship_worshipevent` (`id`),
   CONSTRAINT `worship_worshipattendee_member_id_a77feb42_fk_member_member_id` FOREIGN KEY (`member_id`) REFERENCES `member_member` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -605,7 +605,7 @@ CREATE TABLE `worship_worshipattendee` (
 
 LOCK TABLES `worship_worshipattendee` WRITE;
 /*!40000 ALTER TABLE `worship_worshipattendee` DISABLE KEYS */;
-INSERT INTO `worship_worshipattendee` VALUES (1,'Member',NULL,NULL,NULL,1,2);
+INSERT INTO `worship_worshipattendee` VALUES (1,'Member',NULL,NULL,NULL,1,2),(14,'Guest','Weee','mail@mail.com',1,NULL,2),(15,'Member',NULL,NULL,NULL,18,1),(16,'Member',NULL,NULL,NULL,18,2),(17,'Guest','James Madison','email@mail.com',18,NULL,6),(18,'Member',NULL,NULL,NULL,18,6);
 /*!40000 ALTER TABLE `worship_worshipattendee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -625,7 +625,7 @@ CREATE TABLE `worship_worshipevent` (
   PRIMARY KEY (`id`),
   KEY `worship_worshipevent_church_id_b9594bb8_fk_church_church_id` (`church_id`),
   CONSTRAINT `worship_worshipevent_church_id_b9594bb8_fk_church_church_id` FOREIGN KEY (`church_id`) REFERENCES `church_church` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -634,7 +634,7 @@ CREATE TABLE `worship_worshipevent` (
 
 LOCK TABLES `worship_worshipevent` WRITE;
 /*!40000 ALTER TABLE `worship_worshipevent` DISABLE KEYS */;
-INSERT INTO `worship_worshipevent` VALUES (1,'Event #1','2025-04-20','Onsite',2),(2,'Event #2','2025-04-23','Onsite',2);
+INSERT INTO `worship_worshipevent` VALUES (1,'Event #1','2025-04-20','Onsite',2),(2,'Event #2','2025-04-23','Onsite',2),(6,'Worship Sample','2025-04-29','Onsite',4);
 /*!40000 ALTER TABLE `worship_worshipevent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -673,4 +673,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-23 12:10:52
+-- Dump completed on 2025-04-29 14:56:40
