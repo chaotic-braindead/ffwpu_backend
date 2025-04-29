@@ -8,7 +8,7 @@ from django.utils.text import slugify
 # Create your models here.
 def upload_member_photo(instance, filename):
     ext = filename.split(".")[-1]
-    name = slugify(instance.name)
+    name = slugify(instance.full_name)
     # Optional: generate a unique ID to prevent file overwrites
     filename = f"{name}-{uuid.uuid4().hex[:8]}.{ext}"
     return os.path.join("member/photos/", filename)

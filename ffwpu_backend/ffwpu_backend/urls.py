@@ -16,9 +16,13 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from .views import *
+from django.conf.urls.static import static
+from django.urls import re_path
+from django.views.static import serve
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -33,3 +37,9 @@ urlpatterns = [
     path("api/add-admin/", admin_add),
     path("api/check-auth/", check_auth),
 ]
+
+# Add media serving patterns for each app
+for app, path in settings.MEDIA_LOCATIONS.items():
+    urlpatterns += [
+        re_path(rf"^{app}/photos/(?P<path>.*)$", serve, {"document_root": path}),
+    ]

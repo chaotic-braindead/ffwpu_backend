@@ -12,10 +12,24 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Media files configuration
+STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# App-specific media settings
+MEDIA_LOCATIONS = {
+    "member": os.path.join(BASE_DIR, "member", "photos"),
+    "worship": os.path.join(BASE_DIR, "worship", "photos"),
+}
+
+# Ensure directories exist
+for path in MEDIA_LOCATIONS.values():
+    os.makedirs(path, exist_ok=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
