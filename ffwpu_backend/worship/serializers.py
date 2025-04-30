@@ -27,9 +27,18 @@ class WorshipAttendeeSerializer(serializers.ModelSerializer):
 
 
 class WorshipImageSerializer(serializers.ModelSerializer):
+    photo = serializers.ImageField(use_url=True)
+
     class Meta:
         model = WorshipImage
         fields = "__all__"
+
+    def get_photo(self, obj):
+        request = self.context.get("request")
+        if not obj.photo:
+            return None
+        url = obj.photo.url
+        return request.build_absolute_uri(url) if request else url
 
 
 class WorshipEventSerializer(serializers.ModelSerializer):
@@ -46,9 +55,9 @@ class WorshipEventSerializer(serializers.ModelSerializer):
         ).data
 
     def get_images(self, instance):
-        return WorshipImageSerializer(
-            WorshipImage.objects.filter(worship=instance.id), many=True
-        ).data
+        qs = WorshipImage.objects.filter(worship=instance.id)
+        # Pass along the parent context (which includes `request`)
+        return WorshipImageSerializer(qs, many=True, context=self.context).data
 
     def to_representation(self, instance):
         data = super().to_representation(instance)

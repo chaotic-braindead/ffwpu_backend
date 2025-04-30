@@ -9,7 +9,7 @@ def upload_worship_photo(instance, filename):
     name = slugify(instance.worship.event_name)
     # Optional: generate a unique ID to prevent file overwrites
     filename = f"{name}-{uuid.uuid4().hex[:8]}.{ext}"
-    return os.path.join("worship/photos/", filename)
+    return os.path.join(f"worship/photos/{instance.worship.id}", filename)
 
 
 # Create your models here.
