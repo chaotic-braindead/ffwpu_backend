@@ -54,3 +54,56 @@ def admin_add(request):
 @api_view(["GET"])
 def check_auth(request):
     return Response({"message": "authenticated", "user": request.user.username})
+
+
+@api_view(["POST"])
+def change_admin_password(request):
+    user = request.user
+    print(user)
+    print(request.data)
+
+    # Ensure user is a superuser
+    if not user.is_superuser:
+        return Response(
+            {"error": "Only admin users can use this endpoint"},
+            status=status.HTTP_403_FORBIDDEN,
+        )
+
+    old_password = request.data.get("old_password")
+    new_password = request.data.get("new_password")
+    confirm_password = request.data.get("confirm_password")
+
+    # Validate input fields
+    if not (old_password and new_password and confirm_password):
+        return Response(
+            {
+                "error": "All fields are required (old_password, new_password, confirm_password)"
+            },
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    # Verify old password is correct
+    if not user.check_password(old_password):
+        return Response(
+            {"error": "Current password is incorrect"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    # Check if new passwords match
+    if new_password != confirm_password:
+        return Response(
+            {"error": "New passwords do not match"}, status=status.HTTP_400_BAD_REQUEST
+        )
+
+    # Set the new password
+    user.set_password(new_password)
+    user.save()
+
+    # Invalidate old token and create new one
+    Token.objects.filter(user=user).delete()
+    new_token = Token.objects.create(user=user)
+
+    return Response(
+        {"message": "Password changed successfully", "new_token": new_token.key},
+        status=status.HTTP_200_OK,
+    )

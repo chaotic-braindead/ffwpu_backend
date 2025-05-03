@@ -36,6 +36,7 @@ urlpatterns = [
     path("api/refresh-token/", TokenRefreshView.as_view()),
     path("api/add-admin/", admin_add),
     path("api/check-auth/", check_auth),
+    path("api/change-password/", change_admin_password),
 ]
 
 # Add media serving patterns for each app
