@@ -107,3 +107,20 @@ def change_admin_password(request):
         {"message": "Password changed successfully", "new_token": new_token.key},
         status=status.HTTP_200_OK,
     )
+
+
+@api_view(["GET"])
+def get_current_user(request):
+    user = request.user
+    if not user.is_authenticated:
+        return Response(
+            {"error": "Not authenticated"}, status=status.HTTP_401_UNAUTHORIZED
+        )
+
+    user_data = {
+        "id": user.id,
+        "username": user.username,
+        "email": user.email,
+    }
+
+    return Response(user_data, status=status.HTTP_200_OK)

@@ -37,6 +37,7 @@ urlpatterns = [
     path("api/add-admin/", admin_add),
     path("api/check-auth/", check_auth),
     path("api/change-password/", change_admin_password),
+    path("api/user/", get_current_user),
 ]
 
 # Add media serving patterns for each app
