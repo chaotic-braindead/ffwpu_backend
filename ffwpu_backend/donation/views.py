@@ -102,22 +102,23 @@ class DonationViewSet(viewsets.ModelViewSet):
         )
 
         now = datetime.now()
+        four_weeks_ago = now - timedelta(days=28)
+        twelve_months_ago = now - timedelta(days=365)
+
         response_data = {
             "currency": "USD",  # All amounts are converted to USD
             "total_donation": total_donation,
             "average_donation": average_donation,
             "top_donors": {
-                "all_time": get_top_donors(self.queryset),
+                "yearly": get_top_donors(
+                    self.queryset
+                ),  # All donations regardless of date
                 "monthly": get_top_donors(
-                    self.queryset.filter(date__year=now.year, date__month=now.month)
-                ),
+                    self.queryset.filter(date__gte=twelve_months_ago)
+                ),  # Last 12 months
                 "weekly": get_top_donors(
-                    self.queryset.filter(
-                        date__gte=now - timedelta(days=now.weekday()),
-                        date__lt=now + timedelta(days=1),
-                    )
-                ),
-                "yearly": get_top_donors(self.queryset.filter(date__year=now.year)),
+                    self.queryset.filter(date__gte=four_weeks_ago)
+                ),  # Last 28 days
             },
             "time_series": {
                 "monthly": monthly_data,

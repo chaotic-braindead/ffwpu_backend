@@ -123,7 +123,7 @@ WSGI_APPLICATION = "ffwpu_backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ffwpu_db2",
+        "NAME": "ffwpu_db3",
         "USER": "root",
         "PASSWORD": "",
         "HOST": "localhost",
