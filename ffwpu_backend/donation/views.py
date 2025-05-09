@@ -90,20 +90,31 @@ class DonationViewSet(viewsets.ModelViewSet):
                 for period, amount in sorted(period_totals.items())
             ]
 
-        # Get top donors for different time periods
-        monthly_data = get_time_series_data(
-            self.queryset.annotate(period=TruncMonth("date"))
-        )
-        weekly_data = get_time_series_data(
-            self.queryset.annotate(period=TruncWeek("date"))
-        )
-        yearly_data = get_time_series_data(
-            self.queryset.annotate(period=TruncYear("date"))
-        )
-
         now = datetime.now()
         four_weeks_ago = now - timedelta(days=28)
         twelve_months_ago = now - timedelta(days=365)
+
+        # Get top donors for different time periods
+        # Get time series data with proper date filtering
+        monthly_data = get_time_series_data(
+            self.queryset.filter(date__gte=twelve_months_ago, date__lte=now).annotate(
+                period=TruncMonth("date")
+            )
+        )
+
+        weekly_data = get_time_series_data(
+            self.queryset.filter(date__gte=four_weeks_ago, date__lte=now).annotate(
+                period=TruncWeek("date")
+            )
+        )
+
+        yearly_data = get_time_series_data(
+            self.queryset.filter(
+                date__lte=now
+            ).annotate(  # Include all historical data, exclude future
+                period=TruncYear("date")
+            )
+        )
 
         response_data = {
             "currency": "USD",  # All amounts are converted to USD
